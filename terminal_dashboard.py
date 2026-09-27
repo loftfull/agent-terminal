@@ -69,7 +69,7 @@ def render_page(view=None):
     template = template.replace('/* VENDORED_NPROGRESS */', vendor)
     template = template.replace('/* MESSAGE_LIBRARY */', (TEMPLATE.parent/'message_library.js').read_text(encoding='utf-8'))
     template = template.replace('/* PROGRESS_DASHBOARD */', (TEMPLATE.parent/'progress_dashboard.js').read_text(encoding='utf-8'))
-    for marker_name, filename in [('VENDORED_LOADING_CSS', 'vendor/loading.css'), ('STUDIO_CSS', 'studio.css'), ('STUDIO_JS', 'studio.js'), ('CONNECTIONS_JS', 'connections.js'), ('CONNECT_UI_JS', 'connect_ui.js')]:
+    for marker_name, filename in [('VENDORED_LOADING_CSS', 'vendor/loading.css'), ('STUDIO_CSS', 'studio.css'), ('STUDIO_JS', 'studio.js'), ('CONNECTIONS_JS', 'connections.js'), ('REPOSITORY_CACHE_JS', 'repository_cache.js'), ('CONNECT_UI_JS', 'connect_ui.js')]:
         template = template.replace('/* ' + marker_name + ' */', (TEMPLATE.parent / filename).read_text(encoding='utf-8'))
     marker = '<script id="initial-state" type="application/json">null</script>'
     if marker not in template:

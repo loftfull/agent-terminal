@@ -11,7 +11,7 @@
 - Project ID: `project-history-agent`
 - Каноническая версия: v0.8.1-candidate.1 + browser observation correction; continuous ingestion and A6 open
 - Текущий чат: chat-current-project-history-agent
-- Следующий проверяемый шаг: Проверить визуально обозреватель запусков; затем спроектировать долговечный импорт выбранного GitHub-наблюдения с источниками и явным project_id. Авторизация private repos, live transport и A6 остаются открытыми.
+- Следующий проверяемый шаг: Реализовать явный импорт выбранного GitHub JSON в канонический журнал с project_id и provenance; локальный браузерный кэш уже доступен. Визуальная проверка и A6 открыты.
 - Правило продолжения: сначала прочитать этот отчёт и PROJECT_MEMORY.json; не повышать reported/planned до verified без новой проверки.
 
 ## CRITICAL_CONSTRAINTS — обязательные ограничения
@@ -191,6 +191,11 @@
 - 2026-09-27T11:16:37.979063+00:00 · **observed** · Local run running
 - 2026-09-27T11:16:38.105647+00:00 · **observed** · Local run succeeded
 - 2026-09-27T11:16:38.233777+00:00 · **reported** · Изучены Langfuse, Agent Chat UI, Basic Memory, Octokit. Перенесён подход фильтрации и MIT Link parser. Node/DOM/dashboard checks PASS, visual QA open.
+- 2026-09-27T13:45:26.870831+00:00 · **reported** · Сохранённые GitHub-снимки
+- 2026-09-27T13:45:27.074058+00:00 · **observed** · Local run starting
+- 2026-09-27T13:45:27.172867+00:00 · **observed** · Local run running
+- 2026-09-27T13:45:27.277808+00:00 · **observed** · Local run succeeded
+- 2026-09-27T13:45:27.408463+00:00 · **reported** · Сохранение repo/date, повторное открытие, безопасный отказ при quota/corruption и scoped transfer. Node/DOM/Python PASS; browser visual QA open.
 - 2026-09-15 · **verified** · Project History Agent originated in ChatGPT chat агент.
 - 2026-09-15 · **verified** · Current chat explicitly requested continuation from chat агент.
 - 2026-09-16 · **verified** · v0.5 durable history package passed its deterministic and real-project candidate gates; A6 remained NOT_RUN.
@@ -400,8 +405,13 @@
 - `SRC-EV-RUN-a21c8d36cd6b4329aa0f45a1ef5fb828-running` — local-run:a21c8d36cd6b4329aa0f45a1ef5fb828
 - `SRC-EV-RUN-a21c8d36cd6b4329aa0f45a1ef5fb828-succeeded` — local-run:a21c8d36cd6b4329aa0f45a1ef5fb828
 - `SRC-TERMINAL-e1862dff7a361f010dfe8204368e49e3544ed306985f4148b7baed3812cc458c` — terminal-cli:analog-adaptation-20260927/e1862dff7a361f010dfe8204368e49e3544ed306985f4148b7baed3812cc458c
+- `SRC-TERMINAL-87da7c15c978eba64467f7c0cc14d714e4ed370a491fdaf797bd05d991bb8dad` — terminal-cli:repo-snapshots-20260927/87da7c15c978eba64467f7c0cc14d714e4ed370a491fdaf797bd05d991bb8dad
+- `SRC-EV-RUN-aa921d7b9d704f6e8e587fa191970195-starting` — local-run:aa921d7b9d704f6e8e587fa191970195
+- `SRC-EV-RUN-aa921d7b9d704f6e8e587fa191970195-running` — local-run:aa921d7b9d704f6e8e587fa191970195
+- `SRC-EV-RUN-aa921d7b9d704f6e8e587fa191970195-succeeded` — local-run:aa921d7b9d704f6e8e587fa191970195
+- `SRC-TERMINAL-b3344c445aac0fdb947f3cc9d77b783d9aa2ca19248289111ecaafe484552fd6` — terminal-cli:repo-snapshots-20260927/b3344c445aac0fdb947f3cc9d77b783d9aa2ca19248289111ecaafe484552fd6
 
 ## 11. Передача
 - Текущий чат: chat-current-project-history-agent
-- Следующий шаг: Проверить визуально обозреватель запусков; затем спроектировать долговечный импорт выбранного GitHub-наблюдения с источниками и явным project_id. Авторизация private repos, live transport и A6 остаются открытыми.
-- Обновлено: 2026-09-27T11:16:38.370814+00:00
+- Следующий шаг: Реализовать явный импорт выбранного GitHub JSON в канонический журнал с project_id и provenance; локальный браузерный кэш уже доступен. Визуальная проверка и A6 открыты.
+- Обновлено: 2026-09-27T13:45:27.544703+00:00

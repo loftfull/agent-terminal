@@ -7,8 +7,13 @@ function openConnectionDialog(kind){
   const f=el('form'),label=el('label','Репозиторий GitHub'),input=el('input');input.id='repository-url';input.placeholder='https://github.com/owner/repo';input.required=true;input.autocomplete='off';label.htmlFor=input.id;const submit=el('button','Получить сведения','primary-action');submit.type='submit';append(f,label,input,submit);d.append(f);
   d.append(el('p','Приватные репозитории требуют отдельного авторизованного подключения. Токены сюда не вводите. Сведения GitHub показываются отдельно от памяти открытого проекта.','meta'));
   const status=el('p','Ожидание ссылки','meta');status.setAttribute('role','status');const results=el('div');append(d,status,results);
-  f.onsubmit=async e=>{e.preventDefault();controller?.abort();controller=new AbortController();const request=controller;const timer=setTimeout(()=>request.abort(),45000);submit.disabled=true;results.replaceChildren();status.textContent='Получаем сведения GitHub…';d.setAttribute('aria-busy','true');
-   try{const observed=await FixConnect.inspect(input.value,fetch,request.signal);if(!d.isConnected||request.signal.aborted)return;repositoryObservation=observed;status.textContent='Разделов получено: '+Object.values(observed.sections).filter(v=>v.status==='observed').length+' из 7 · '+observed.repository+' · '+new Date(observed.observed_at).toLocaleString('ru-RU');
+  const saved=el('section');d.insertBefore(saved,f);
+  function showSaved(){saved.replaceChildren(el('h3','Сохранённые снимки'));try{const cache=RepositoryCache.list(localStorage);cache.warnings.forEach(w=>saved.append(el('p',w,'meta')));if(!cache.items.length)saved.append(el('p','Пока нет сохранённых снимков.','meta'));cache.items.forEach(item=>{const b=el('button',item.repository+' · '+new Date(item.observed_at).toLocaleString('ru-RU'),'task');b.onclick=()=>{controller?.abort();controller=null;submit.disabled=false;d.removeAttribute('aria-busy');showObservation(item,true)};saved.append(b)})}catch(e){saved.append(el('p','Хранилище браузера недоступно: '+e.message,'meta'))}}
+  saved.append(el('h3','Сохранённые снимки'));showSaved();
+  d.append(el('p','Снимки доступны в этом браузере по этому адресу. Очистка данных сайта удалит их; для резервной копии скачайте JSON. Они не добавляются в журнал проекта.','meta'));
+  function showObservation(observed,cached){
+   results.replaceChildren();repositoryObservation=observed;input.value=observed.repository;
+   status.textContent=(cached?'Сохранённый снимок, без обновления GitHub: ':'Получено: ')+observed.repository+' · '+new Date(observed.observed_at).toLocaleString('ru-RU')+' · Разделов: '+Object.values(observed.sections).filter(v=>v.status==='observed').length+' из 7';
     results.append(el('h3',observed.metadata.full_name));results.append(el('p',observed.metadata.description||'Описание отсутствует'));safeLink(results,observed.metadata.html_url);
     results.append(el('p','Основная ветка: '+observed.metadata.default_branch+' · Лицензия: '+(observed.metadata.license?.spdx_id||'не указана'),'meta'));
     const names={commits:'Последние 10 коммитов',issues:'До 20 открытых задач (API включает PR)',pulls:'До 20 открытых PR',releases:'Последние 5 релизов',actions:'Последние 10 запусков CI',languages:'Языки',readme:'README'};
@@ -20,8 +25,14 @@ function openConnectionDialog(kind){
      const raw=el('details');raw.append(el('summary','Исходные данные JSON'));raw.append(el('pre',text,'connection-data'));part.append(raw);
     }else part.append(el('pre',text,'connection-data'));results.append(part)});
     results.append(el('p','Это ограниченная выборка, не полный архив. Разделы получены отдельными запросами. Содержимое репозитория не исполняется.','meta'));
+    const save=el('button','Сохранить снимок в браузере');save.onclick=()=>{try{const r=RepositoryCache.save(localStorage,observed);status.textContent=r.added?'Снимок сохранён в этом браузере':'Этот снимок уже сохранён';showSaved()}catch(e){status.textContent='Не сохранено: '+e.message+'. Можно скачать JSON через передачу в AI-чат.'}};results.append(save);
+    if(cached){const remove=el('button','Убрать этот снимок из кэша');remove.onclick=()=>{try{RepositoryCache.remove(localStorage,observed);showSaved();status.textContent='Снимок убран из кэша. Он ещё открыт: можно сохранить снова или скачать JSON.';remove.disabled=true}catch(e){status.textContent='Не удалось убрать снимок: '+e.message}};results.append(remove)}
     const transfer=el('button','Передать этот репозиторий в AI-чат','primary-action');transfer.onclick=()=>{d.close();openConnectionDialog('chat-repository')};results.append(transfer);
-   }catch(err){if(d.isConnected)status.textContent=request.signal.aborted?'Загрузка прервана или превышено время ожидания. Повторите запрос.':err.message}
+  }
+  f.onsubmit=async e=>{e.preventDefault();controller?.abort();controller=new AbortController();const request=controller;const timer=setTimeout(()=>request.abort(),45000);submit.disabled=true;results.replaceChildren();status.textContent='Получаем сведения GitHub…';d.setAttribute('aria-busy','true');
+   try{const observed=await FixConnect.inspect(input.value,fetch,request.signal);if(!d.isConnected||request.signal.aborted)return;repositoryObservation=observed;status.textContent='Разделов получено: '+Object.values(observed.sections).filter(v=>v.status==='observed').length+' из 7 · '+observed.repository+' · '+new Date(observed.observed_at).toLocaleString('ru-RU');
+    showObservation(observed,false);
+   }catch(err){if(d.isConnected&&controller===request)status.textContent=request.signal.aborted?'Загрузка прервана или превышено время ожидания. Повторите запрос.':err.message}
    finally{clearTimeout(timer);if(d.isConnected){submit.disabled=false;d.removeAttribute('aria-busy')}}};
  }else{
   const data=kind==='chat-repository'?repositoryObservation:state;

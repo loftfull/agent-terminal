@@ -4330,12 +4330,213 @@
       "source_ids": [],
       "summary": "Pinned SHA and licenses in docs/ANALOG_COMPARISON_2026-09-27.md. Langfuse-inspired run inspection and bounded Octokit Link adaptation implemented. HTTP fixture checks and DOM tests passed; no upstream applications or paid services installed.",
       "tool": "repository research and local tests"
+    },
+    {
+      "author": "contract submitter",
+      "dedupe_key": "cc1cd667118f2847109b750839bcb7cad2420548dc3c5c6208d37298cbaf48b6",
+      "event_id": "EV-TERMINAL-87da7c15c978eba64467f7c0cc14d714e4ed370a491fdaf797bd05d991bb8dad",
+      "event_type": "terminal_contract",
+      "evidence_status": "reported",
+      "model_id": "unknown",
+      "observed_at": "2026-09-27T13:45:26.892814+00:00",
+      "occurred_at": "2026-09-27T13:45:26.870831+00:00",
+      "session_id": "unknown",
+      "source_ids": [
+        "SRC-TERMINAL-87da7c15c978eba64467f7c0cc14d714e4ed370a491fdaf797bd05d991bb8dad"
+      ],
+      "summary": "Сохранённые GitHub-снимки",
+      "terminal_payload": {
+        "acceptance": [
+          "Reopen cached snapshot",
+          "Quota failure preserves prior data",
+          "Source identity checked"
+        ],
+        "constraints": [
+          {
+            "reason": "Разные области доверия",
+            "rule": "Не объединять снимки с canonical memory"
+          }
+        ],
+        "deliverables": [
+          "Локальный кэш",
+          "Выбор repo/date",
+          "Изолированный AI handoff"
+        ],
+        "max_continuations": 1,
+        "purpose": "Возвращаться к выбранному repo context без повторной загрузки",
+        "stop_conditions": [
+          "Кэш недоступен — сохранить JSON вручную"
+        ],
+        "task_id": "repo-snapshots-20260927",
+        "title": "Сохранённые GitHub-снимки"
+      },
+      "tool": "unknown"
+    },
+    {
+      "author": "local command supervisor",
+      "dedupe_key": "ce6a745137aa7d691223092990f5bb32b4b8f7c6c7fa98d48019a152e115bfd7",
+      "event_id": "EV-RUN-aa921d7b9d704f6e8e587fa191970195-starting",
+      "event_type": "terminal_run",
+      "evidence_status": "observed",
+      "model_id": "unknown",
+      "observed_at": "2026-09-27T13:45:27.096075+00:00",
+      "occurred_at": "2026-09-27T13:45:27.074058+00:00",
+      "runner_payload": {
+        "accepted": false,
+        "argv": [
+          "node",
+          "tests/test_repository_cache.cjs"
+        ],
+        "attribution_status": "reported",
+        "continuation_count": 0,
+        "cwd": "/workspace/scratch/c911ac0d5396/repos/FIX",
+        "ended_at": null,
+        "exit_code": null,
+        "model_id": "unknown",
+        "output_limit_per_stream_bytes": 65536,
+        "process_id": null,
+        "project_id": "project-history-agent",
+        "run_id": "aa921d7b9d704f6e8e587fa191970195",
+        "runner_pid": 6,
+        "session_id": "repo-snapshots-20260927",
+        "started_at": "2026-09-27T13:45:27.050408+00:00",
+        "status": "starting",
+        "task_id": "repo-snapshots-20260927",
+        "timeout_seconds": 60
+      },
+      "session_id": "repo-snapshots-20260927",
+      "source_ids": [
+        "SRC-EV-RUN-aa921d7b9d704f6e8e587fa191970195-starting"
+      ],
+      "summary": "Local run starting",
+      "tool": "unknown"
+    },
+    {
+      "author": "local command supervisor",
+      "dedupe_key": "ca3fb262a59486a6d5d65686178aa7638447057a2afb9ff42eb6b1399c4ac94c",
+      "event_id": "EV-RUN-aa921d7b9d704f6e8e587fa191970195-running",
+      "event_type": "terminal_run",
+      "evidence_status": "observed",
+      "model_id": "unknown",
+      "observed_at": "2026-09-27T13:45:27.195497+00:00",
+      "occurred_at": "2026-09-27T13:45:27.172867+00:00",
+      "runner_payload": {
+        "accepted": false,
+        "argv": [
+          "node",
+          "tests/test_repository_cache.cjs"
+        ],
+        "attribution_status": "reported",
+        "continuation_count": 0,
+        "cwd": "/workspace/scratch/c911ac0d5396/repos/FIX",
+        "ended_at": null,
+        "exit_code": null,
+        "model_id": "unknown",
+        "output_limit_per_stream_bytes": 65536,
+        "process_id": 7,
+        "project_id": "project-history-agent",
+        "run_id": "aa921d7b9d704f6e8e587fa191970195",
+        "runner_pid": 6,
+        "session_id": "repo-snapshots-20260927",
+        "start_event_id": "EV-RUN-aa921d7b9d704f6e8e587fa191970195-starting",
+        "started_at": "2026-09-27T13:45:27.050408+00:00",
+        "status": "running",
+        "task_id": "repo-snapshots-20260927",
+        "timeout_seconds": 60
+      },
+      "session_id": "repo-snapshots-20260927",
+      "source_ids": [
+        "SRC-EV-RUN-aa921d7b9d704f6e8e587fa191970195-running"
+      ],
+      "summary": "Local run running",
+      "tool": "unknown"
+    },
+    {
+      "author": "local command supervisor",
+      "dedupe_key": "ed8fb052290ca6b4dae25c3c9885ec03d742b14f141263fc79fa43c9ac0861d2",
+      "event_id": "EV-RUN-aa921d7b9d704f6e8e587fa191970195-succeeded",
+      "event_type": "terminal_run",
+      "evidence_status": "observed",
+      "model_id": "unknown",
+      "observed_at": "2026-09-27T13:45:27.301020+00:00",
+      "occurred_at": "2026-09-27T13:45:27.277808+00:00",
+      "runner_payload": {
+        "accepted": false,
+        "argv": [
+          "node",
+          "tests/test_repository_cache.cjs"
+        ],
+        "attribution_status": "reported",
+        "continuation_count": 0,
+        "cwd": "/workspace/scratch/c911ac0d5396/repos/FIX",
+        "ended_at": "2026-09-27T13:45:27.253233+00:00",
+        "exit_code": 0,
+        "model_id": "unknown",
+        "output_limit_per_stream_bytes": 65536,
+        "process_id": 7,
+        "project_id": "project-history-agent",
+        "run_id": "aa921d7b9d704f6e8e587fa191970195",
+        "runner_pid": 6,
+        "session_id": "repo-snapshots-20260927",
+        "start_event_id": "EV-RUN-aa921d7b9d704f6e8e587fa191970195-starting",
+        "started_at": "2026-09-27T13:45:27.050408+00:00",
+        "status": "succeeded",
+        "stderr": {
+          "bytes_seen": 0,
+          "capture_error": null,
+          "text": "",
+          "truncated": false
+        },
+        "stdout": {
+          "bytes_seen": 87,
+          "capture_error": null,
+          "text": "PASS: cache reopen, repo isolation, dedup, conflict, corruption, size and quota safety\n",
+          "truncated": false
+        },
+        "task_id": "repo-snapshots-20260927",
+        "timeout_seconds": 60
+      },
+      "session_id": "repo-snapshots-20260927",
+      "source_ids": [
+        "SRC-EV-RUN-aa921d7b9d704f6e8e587fa191970195-succeeded"
+      ],
+      "summary": "Local run succeeded",
+      "tool": "unknown"
+    },
+    {
+      "author": "reported executor",
+      "dedupe_key": "b2b5d4a0ae565aaa20156115e995a108c46b03b4a062d54648722dfbace5d851",
+      "event_id": "EV-TERMINAL-b3344c445aac0fdb947f3cc9d77b783d9aa2ca19248289111ecaafe484552fd6",
+      "event_type": "terminal_report",
+      "evidence_status": "reported",
+      "model_id": "unknown",
+      "observed_at": "2026-09-27T13:45:27.430777+00:00",
+      "occurred_at": "2026-09-27T13:45:27.408463+00:00",
+      "session_id": "unknown",
+      "source_ids": [
+        "SRC-TERMINAL-b3344c445aac0fdb947f3cc9d77b783d9aa2ca19248289111ecaafe484552fd6"
+      ],
+      "summary": "Сохранение repo/date, повторное открытие, безопасный отказ при quota/corruption и scoped transfer. Node/DOM/Python PASS; browser visual QA open.",
+      "terminal_payload": {
+        "acceptance_results": [],
+        "blockers": [],
+        "continuation_count": 0,
+        "evidence_event_ids": [
+          "EV-RUN-aa921d7b9d704f6e8e587fa191970195-succeeded"
+        ],
+        "model_id": "unknown",
+        "session_id": "unknown",
+        "status": "review",
+        "summary": "Сохранение repo/date, повторное открытие, безопасный отказ при quota/corruption и scoped transfer. Node/DOM/Python PASS; browser visual QA open.",
+        "task_id": "repo-snapshots-20260927"
+      },
+      "tool": "unknown"
     }
   ],
   "handoff": {
     "current_chat_id": "chat-current-project-history-agent",
-    "next_step": "Проверить визуально обозреватель запусков; затем спроектировать долговечный импорт выбранного GitHub-наблюдения с источниками и явным project_id. Авторизация private repos, live transport и A6 остаются открытыми.",
-    "updated_at": "2026-09-27T11:16:38.370814+00:00"
+    "next_step": "Реализовать явный импорт выбранного GitHub JSON в канонический журнал с project_id и provenance; локальный браузерный кэш уже доступен. Визуальная проверка и A6 открыты.",
+    "updated_at": "2026-09-27T13:45:27.544703+00:00"
   },
   "locations": [
     {
@@ -7209,6 +7410,162 @@
       "locator": "terminal-cli:analog-adaptation-20260927/e1862dff7a361f010dfe8204368e49e3544ed306985f4148b7baed3812cc458c",
       "presence_status": "observed",
       "source_id": "SRC-TERMINAL-e1862dff7a361f010dfe8204368e49e3544ed306985f4148b7baed3812cc458c"
+    },
+    {
+      "content_status": "reported",
+      "input": {
+        "acceptance": [
+          "Reopen cached snapshot",
+          "Quota failure preserves prior data",
+          "Source identity checked"
+        ],
+        "constraints": [
+          {
+            "reason": "Разные области доверия",
+            "rule": "Не объединять снимки с canonical memory"
+          }
+        ],
+        "deliverables": [
+          "Локальный кэш",
+          "Выбор repo/date",
+          "Изолированный AI handoff"
+        ],
+        "max_continuations": 1,
+        "purpose": "Возвращаться к выбранному repo context без повторной загрузки",
+        "stop_conditions": [
+          "Кэш недоступен — сохранить JSON вручную"
+        ],
+        "task_id": "repo-snapshots-20260927",
+        "title": "Сохранённые GitHub-снимки"
+      },
+      "kind": "terminal_cli",
+      "locator": "terminal-cli:repo-snapshots-20260927/87da7c15c978eba64467f7c0cc14d714e4ed370a491fdaf797bd05d991bb8dad",
+      "presence_status": "observed",
+      "source_id": "SRC-TERMINAL-87da7c15c978eba64467f7c0cc14d714e4ed370a491fdaf797bd05d991bb8dad"
+    },
+    {
+      "content_status": "observed",
+      "input": {
+        "accepted": false,
+        "argv": [
+          "node",
+          "tests/test_repository_cache.cjs"
+        ],
+        "attribution_status": "reported",
+        "continuation_count": 0,
+        "cwd": "/workspace/scratch/c911ac0d5396/repos/FIX",
+        "ended_at": null,
+        "exit_code": null,
+        "model_id": "unknown",
+        "output_limit_per_stream_bytes": 65536,
+        "process_id": null,
+        "project_id": "project-history-agent",
+        "run_id": "aa921d7b9d704f6e8e587fa191970195",
+        "runner_pid": 6,
+        "session_id": "repo-snapshots-20260927",
+        "started_at": "2026-09-27T13:45:27.050408+00:00",
+        "status": "starting",
+        "task_id": "repo-snapshots-20260927",
+        "timeout_seconds": 60
+      },
+      "kind": "local_process",
+      "locator": "local-run:aa921d7b9d704f6e8e587fa191970195",
+      "presence_status": "observed",
+      "source_id": "SRC-EV-RUN-aa921d7b9d704f6e8e587fa191970195-starting"
+    },
+    {
+      "content_status": "observed",
+      "input": {
+        "accepted": false,
+        "argv": [
+          "node",
+          "tests/test_repository_cache.cjs"
+        ],
+        "attribution_status": "reported",
+        "continuation_count": 0,
+        "cwd": "/workspace/scratch/c911ac0d5396/repos/FIX",
+        "ended_at": null,
+        "exit_code": null,
+        "model_id": "unknown",
+        "output_limit_per_stream_bytes": 65536,
+        "process_id": 7,
+        "project_id": "project-history-agent",
+        "run_id": "aa921d7b9d704f6e8e587fa191970195",
+        "runner_pid": 6,
+        "session_id": "repo-snapshots-20260927",
+        "start_event_id": "EV-RUN-aa921d7b9d704f6e8e587fa191970195-starting",
+        "started_at": "2026-09-27T13:45:27.050408+00:00",
+        "status": "running",
+        "task_id": "repo-snapshots-20260927",
+        "timeout_seconds": 60
+      },
+      "kind": "local_process",
+      "locator": "local-run:aa921d7b9d704f6e8e587fa191970195",
+      "presence_status": "observed",
+      "source_id": "SRC-EV-RUN-aa921d7b9d704f6e8e587fa191970195-running"
+    },
+    {
+      "content_status": "observed",
+      "input": {
+        "accepted": false,
+        "argv": [
+          "node",
+          "tests/test_repository_cache.cjs"
+        ],
+        "attribution_status": "reported",
+        "continuation_count": 0,
+        "cwd": "/workspace/scratch/c911ac0d5396/repos/FIX",
+        "ended_at": "2026-09-27T13:45:27.253233+00:00",
+        "exit_code": 0,
+        "model_id": "unknown",
+        "output_limit_per_stream_bytes": 65536,
+        "process_id": 7,
+        "project_id": "project-history-agent",
+        "run_id": "aa921d7b9d704f6e8e587fa191970195",
+        "runner_pid": 6,
+        "session_id": "repo-snapshots-20260927",
+        "start_event_id": "EV-RUN-aa921d7b9d704f6e8e587fa191970195-starting",
+        "started_at": "2026-09-27T13:45:27.050408+00:00",
+        "status": "succeeded",
+        "stderr": {
+          "bytes_seen": 0,
+          "capture_error": null,
+          "text": "",
+          "truncated": false
+        },
+        "stdout": {
+          "bytes_seen": 87,
+          "capture_error": null,
+          "text": "PASS: cache reopen, repo isolation, dedup, conflict, corruption, size and quota safety\n",
+          "truncated": false
+        },
+        "task_id": "repo-snapshots-20260927",
+        "timeout_seconds": 60
+      },
+      "kind": "local_process",
+      "locator": "local-run:aa921d7b9d704f6e8e587fa191970195",
+      "presence_status": "observed",
+      "source_id": "SRC-EV-RUN-aa921d7b9d704f6e8e587fa191970195-succeeded"
+    },
+    {
+      "content_status": "reported",
+      "input": {
+        "acceptance_results": [],
+        "blockers": [],
+        "continuation_count": 0,
+        "evidence_event_ids": [
+          "EV-RUN-aa921d7b9d704f6e8e587fa191970195-succeeded"
+        ],
+        "model_id": "unknown",
+        "session_id": "unknown",
+        "status": "review",
+        "summary": "Сохранение repo/date, повторное открытие, безопасный отказ при quota/corruption и scoped transfer. Node/DOM/Python PASS; browser visual QA open.",
+        "task_id": "repo-snapshots-20260927"
+      },
+      "kind": "terminal_cli",
+      "locator": "terminal-cli:repo-snapshots-20260927/b3344c445aac0fdb947f3cc9d77b783d9aa2ca19248289111ecaafe484552fd6",
+      "presence_status": "observed",
+      "source_id": "SRC-TERMINAL-b3344c445aac0fdb947f3cc9d77b783d9aa2ca19248289111ecaafe484552fd6"
     }
   ],
   "versions": [
