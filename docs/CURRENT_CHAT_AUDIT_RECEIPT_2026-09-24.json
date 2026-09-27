@@ -1,0 +1,146 @@
+{
+  "observed_at": "2026-09-24T08:37:51.684809+00:00",
+  "scope": "Own FIX journal and selected current user request; not full raw chat",
+  "runtime_code_baseline": "0b86b8391b9c5c532bc4f09bfa905bfcc7f22c71",
+  "runner": {
+    "run_id": "0f9623ad8baf4c3c9671355fc99fb27c",
+    "project_id": "project-history-agent",
+    "task_id": "current-chat-audit-2026-09-24",
+    "argv": [
+      "/workspace/scratch/c911ac0d5396/mcp-venv/bin/python",
+      "/workspace/scratch/c911ac0d5396/current-chat-audit/verify_handoff.py"
+    ],
+    "cwd": "/workspace/scratch/c911ac0d5396/repos/FIX",
+    "timeout_seconds": 120,
+    "model_id": "unknown",
+    "session_id": "unknown",
+    "attribution_status": "reported",
+    "continuation_count": 0,
+    "started_at": "2026-09-24T08:37:47.901164+00:00",
+    "ended_at": "2026-09-24T08:37:51.684809+00:00",
+    "exit_code": 0,
+    "status": "succeeded",
+    "accepted": false,
+    "runner_pid": 2,
+    "process_id": 7,
+    "output_limit_per_stream_bytes": 65536,
+    "start_event_id": "EV-RUN-0f9623ad8baf4c3c9671355fc99fb27c-starting",
+    "stdout": {
+      "text": "{\"status\": \"PASS\", \"coverage\": \"Current canonical FIX memory and selected visible user request; not full original chat\", \"existing_entities_preserved\": true, \"old_events_unchanged\": true, \"read_did_not_change_journal\": true, \"mcp\": {\"project_id\": \"project-history-agent\", \"event_index_count\": 29, \"critical_constraints\": 7, \"protection\": \"ahead_of_vault\", \"task_present\": true}, \"tests\": \"..Executing <Task pending name='Task-2' coro=<ProtocolTests.test_real_stdio_client_retrieves_existing_FIX_journal() running at /workspace/scratch/c911ac0d5396/repos/FIX/tests/test_mcp_bridge.py:108> cb=[_run_until_complete_cb() at /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:181] created at /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py:100> took 0.461 seconds\\n.............................\\n----------------------------------------------------------------------\\nRan 31 tests in 2.022s\\n\\nOK\\n\", \"tested_tip\": \"3ab641890feac62aca5458851054205f491aafd076ce439f9c9ab06f1e3ba690\"}\n",
+      "bytes_seen": 1075,
+      "truncated": false,
+      "capture_error": null
+    },
+    "stderr": {
+      "text": "",
+      "bytes_seen": 0,
+      "truncated": false,
+      "capture_error": null
+    },
+    "event_id": "EV-RUN-0f9623ad8baf4c3c9671355fc99fb27c-succeeded",
+    "vault_checkpoint": {
+      "status": "captured",
+      "version": 3,
+      "records": 144,
+      "journal_tip": "c7fcc8c57e5c3926ab4cb5008bac02dc3fe33a49702fe11685c19bdb75401bab"
+    }
+  },
+  "handoff_check": {
+    "status": "PASS",
+    "coverage": "Current canonical FIX memory and selected visible user request; not full original chat",
+    "existing_entities_preserved": true,
+    "old_events_unchanged": true,
+    "read_did_not_change_journal": true,
+    "mcp": {
+      "project_id": "project-history-agent",
+      "event_index_count": 29,
+      "critical_constraints": 7,
+      "protection": "ahead_of_vault",
+      "task_present": true
+    },
+    "tests": "..Executing <Task pending name='Task-2' coro=<ProtocolTests.test_real_stdio_client_retrieves_existing_FIX_journal() running at /workspace/scratch/c911ac0d5396/repos/FIX/tests/test_mcp_bridge.py:108> cb=[_run_until_complete_cb() at /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:181] created at /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py:100> took 0.461 seconds\n.............................\n----------------------------------------------------------------------\nRan 31 tests in 2.022s\n\nOK\n",
+    "tested_tip": "3ab641890feac62aca5458851054205f491aafd076ce439f9c9ab06f1e3ba690"
+  },
+  "final_mcp": {
+    "status": "PASS",
+    "journal_tip": "26f23cef5439e834615c1a1c6a274d063182929e0ed3eecb10616834e03419bc",
+    "protection": {
+      "status": "matched",
+      "version": 4,
+      "protected_records": 151,
+      "current_records": 151,
+      "unprotected_records": 0,
+      "journal_tip": "26f23cef5439e834615c1a1c6a274d063182929e0ed3eecb10616834e03419bc",
+      "vault_tip": "26f23cef5439e834615c1a1c6a274d063182929e0ed3eecb10616834e03419bc"
+    },
+    "task_status": "review",
+    "accepted": false,
+    "critical_constraints": 7
+  },
+  "final_read_unchanged": true,
+  "doctor": {
+    "overall": "WARN",
+    "checks": {
+      "package_files": {
+        "status": "PASS",
+        "detail": "required state files present"
+      },
+      "journal_integrity": {
+        "status": "PASS",
+        "detail": "151 record(s)",
+        "issues": []
+      },
+      "journal_replay": {
+        "status": "PASS",
+        "detail": "journal replay succeeded"
+      },
+      "snapshot_replay_match": {
+        "status": "PASS",
+        "detail": "snapshot matches journal replay"
+      },
+      "structural_audit": {
+        "status": "PASS",
+        "detail": "0 structural error(s)",
+        "issues": []
+      },
+      "atomic_persistence": {
+        "status": "PASS",
+        "detail": "atomic write/replace available"
+      },
+      "redaction_pipeline": {
+        "status": "PASS",
+        "detail": "secret probe redacted before persistence"
+      },
+      "history_sources": {
+        "status": "WARN",
+        "detail": "no host history source available",
+        "available": [],
+        "unavailable": {
+          "claude-code": "missing",
+          "codex": "missing",
+          "chatgpt-export": "not_configured"
+        }
+      },
+      "history_adapter": {
+        "status": "WARN",
+        "detail": "no usable history adapter configured or discovered"
+      },
+      "hook_templates": {
+        "status": "WARN",
+        "detail": "hook templates not generated for: claude-code, codex",
+        "authority": "template_only",
+        "present": [],
+        "missing": [
+          "claude-code",
+          "codex"
+        ]
+      },
+      "screenshot_capability": {
+        "status": "WARN",
+        "detail": "screenshot dependency unavailable: No module named 'playwright'"
+      }
+    }
+  },
+  "full_project_acceptance": false,
+  "audit_review": "docs/CURRENT_CHAT_INDEPENDENT_AUDIT_2026-09-24.md"
+}

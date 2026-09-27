@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/project-history/project_history_journal_v0_5.schema.json",
+  "title": "Project History Agent Journal Record v0.5",
+  "type": "object",
+  "required": ["schema", "journal_id", "timestamp", "op", "payload", "prev_hash", "hash"],
+  "properties": {
+    "schema": {"const": "project-history-journal/v0.5"},
+    "journal_id": {"type": "string", "pattern": "^J-[0-9]{6}$"},
+    "timestamp": {"type": "string", "minLength": 1},
+    "op": {"enum": ["project.patch", "source.add", "source.patch", "location.add", "location.patch", "chat.add", "chat.patch", "plan.add", "plan.patch", "version.add", "version.patch", "visual.add", "visual.patch", "line.add", "line.patch", "event.add", "search_queue.replace", "conflicts.replace", "handoff.patch"]},
+    "payload": {},
+    "prev_hash": {"type": "string"},
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  },
+  "additionalProperties": false
+}

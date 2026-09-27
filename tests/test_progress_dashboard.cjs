@@ -1,0 +1,4 @@
+const assert=require('node:assert/strict');const P=require('../web/progress_dashboard.js');
+const s={plans:[{status:'implemented'},{status:'partial'},{status:'surprise'}],sources:[{source_id:'s'}],events:[{event_id:'proof',observed_at:'2026-09-24T12:00:00Z'},{event_id:'a',event_type:'audit_finding_observation',source_ids:['s'],audit_finding:{id:'f',status:'fixed_scoped',evidence_event_ids:['missing']}}]};
+let d=P.derive(s);assert.equal(d.findings[0].status,'unknown');assert.equal(d.plans.unknown.length,1);assert.equal(d.days[0][1].length,1);assert.equal(d.undated,1);
+s.events.push({event_id:'b',event_type:'audit_finding_observation',source_ids:['s'],audit_finding:{id:'f',status:'open',evidence_event_ids:['proof']}});d=P.derive(s);assert.equal(d.findings.length,1);assert.equal(d.findings[0].status,'open');assert.deepEqual(P.derive({}).days,[]);console.log('PASS: evidence gating, latest finding, unknown plans, dates and empty state');

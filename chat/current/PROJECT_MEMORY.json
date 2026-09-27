@@ -1,0 +1,102 @@
+{
+  "chats": [
+    {
+      "chat_id": "chat-agent-origin",
+      "classification": "new",
+      "evidence_strength": "explicit_origin",
+      "project_id": "project-history-agent",
+      "source_ids": ["S-CHAT-ORIGIN"],
+      "started_at": "2026-09-15",
+      "title": "агент"
+    },
+    {
+      "chat_id": "chat-current-project-history-agent",
+      "classification": "continuation",
+      "continuation_refs": ["агент"],
+      "evidence_strength": "explicit",
+      "lineage_evidence": ["explicit_continuation_reference"],
+      "parent_chat_id": "chat-agent-origin",
+      "project_id": "project-history-agent",
+      "source_ids": ["S-CHAT-CURRENT"],
+      "started_at": "2026-09-15",
+      "title": "Продолжение проекта из чата «агент»"
+    }
+  ],
+  "conflicts": [],
+  "development_lines": [],
+  "events": [
+    {
+      "author": "unknown",
+      "dedupe_key": "8b484190dad5e0943bef34d38e296c6d53cd6d2f3adfa9e27b37d8bdda141dd8",
+      "event_id": "EV-00001",
+      "event_type": "chat_lineage_resolution",
+      "evidence_status": "verified",
+      "model_id": "unknown",
+      "observed_at": "2026-09-16T05:04:19.820475+00:00",
+      "occurred_at": "2026-09-16",
+      "session_id": null,
+      "source_ids": ["S-CHAT-CURRENT", "S-CHAT-ORIGIN"],
+      "source_locator": "chat:current:first-user-message",
+      "summary": "Current chat explicitly continues chat ‘агент’; origin chat was added to the handoff chain.",
+      "tool": "unknown"
+    },
+    {
+      "author": "unknown",
+      "dedupe_key": "e88284b20ee197ae54c5fbbddff1fca702b0fef17e2c5cfd07667e818e20711f",
+      "event_id": "EV-00002",
+      "event_type": "migration",
+      "evidence_status": "verified",
+      "model_id": "unknown",
+      "observed_at": "2026-09-16T05:27:03.548899+00:00",
+      "occurred_at": "2026-09-16",
+      "session_id": null,
+      "source_ids": ["S-CHAT-CURRENT"],
+      "source_locator": "PROJECT_HISTORY.events.jsonl",
+      "summary": "Current ChatGPT lineage test migrated to v0.5 append-only journal and replayed successfully.",
+      "tool": "unknown"
+    },
+    {
+      "author": "unknown",
+      "dedupe_key": "b519a902bec6d5368352e88f23e4debf7e42a22993ec4e993578e7f006e61278",
+      "event_id": "EV-00003",
+      "event_type": "request",
+      "evidence_status": "requested",
+      "model_id": "unknown",
+      "observed_at": "2026-09-16T05:48:32.731545+00:00",
+      "occurred_at": "2026-09-16",
+      "session_id": null,
+      "source_ids": ["S-CHAT-FIX"],
+      "source_locator": "chat:current:2026-09-16:fix-transfer",
+      "summary": "User designated loftfull/FIX as the repository for the current project, requested transfer of all current-chat project data, and asked development to continue.",
+      "tool": "unknown"
+    }
+  ],
+  "handoff": {
+    "current_chat_id": "chat-current-project-history-agent",
+    "next_step": "Complete v0.6 host-native adapters, transfer exact project/chat tree to loftfull/FIX, verify remote SHA, then continue A6 independent-model audit preparation.",
+    "updated_at": "2026-09-16T05:27:03.549195+00:00"
+  },
+  "locations": [],
+  "plans": [],
+  "project": {
+    "canonical_version": "v0.6 candidate",
+    "constraints": [
+      "Never infer chat continuation from topic similarity alone",
+      "Keep requested/planned/reported/observed/verified distinct",
+      "Never claim access to the user's local computer without an actual host tool"
+    ],
+    "description": "Portable project historian continued from chat “агент”; current chat is being transferred to canonical GitHub repository loftfull/FIX with host-native history adapters.",
+    "goal": "Preserve evidence-based project history across chats, models, repositories and environments",
+    "name": "Project History Agent",
+    "project_id": "project-history-agent"
+  },
+  "schema": "project-history-state/v0.5",
+  "search_queue": [],
+  "sources": [
+    {"access_type": "conversation_history", "locator": "chat-title:агент", "name": "Earlier ChatGPT chat titled ‘агент’", "observed_at": "2026-09-16", "source_id": "S-CHAT-ORIGIN"},
+    {"access_type": "current_conversation", "locator": "chat:current:first-user-message", "name": "Current ChatGPT continuation request", "observed_at": "2026-09-16", "source_id": "S-CHAT-CURRENT"},
+    {"access_type": "current_conversation", "locator": "chat:current:2026-09-16:fix-transfer", "name": "Current user request to move project/chat data to loftfull/FIX", "observed_at": "2026-09-16", "source_id": "S-CHAT-FIX"}
+  ],
+  "versions": [],
+  "visuals": []
+}

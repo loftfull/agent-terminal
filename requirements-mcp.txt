@@ -1,0 +1,2 @@
+# Official modelcontextprotocol/python-sdk, tested release (not standalone FastMCP).
+mcp==2.2.0

@@ -1,0 +1,13 @@
+const assert=require('node:assert/strict');
+const lib=require('../web/message_library.js');
+const text='Строка  с  пробелами\n<script>не исполнять</script>\n';
+const state={project:{project_id:'p',name:'Проект'},events:[{event_type:'message_record',author:'user',text,event_id:'E',session_id:'s'},{event_type:'message_record',author:'assistant',text:'нет'}]};
+const items=lib.messages(state);assert.equal(items.length,1);assert.equal(items[0].text,text);
+assert.deepEqual(lib.parse(lib.encode(items)),items);
+assert.equal(lib.merge(items,items).length,1);
+assert.equal(lib.merge(items,[{...items[0],project_id:'other'}]).length,2);
+assert.equal(lib.merge(items,[{...items[0],revision:'new',text:'изменён'}]).length,2);
+assert.throws(()=>lib.parse('{"schema":"wrong","items":[]}'));
+assert.throws(()=>lib.merge(items,[{...items[0],text:undefined}]));
+assert.throws(()=>lib.merge([],Array.from({length:201},(_,i)=>({...items[0],message_id:String(i)}))));
+console.log('PASS: user-only messages, exact Unicode/spacing, portable favorites, revision/project isolation, invalid/oversized inputs');

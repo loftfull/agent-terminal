@@ -1,0 +1,41 @@
+name: project-history-agent-ci
+
+on:
+  push:
+    branches: ["project-history-agent-v0.6", "project-history-agent-v0.7", "English"]
+  pull_request:
+
+jobs:
+  mcp-bridge:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install -r requirements-core.txt -r requirements-mcp.txt -r requirements-visual.txt -r requirements-vault.txt
+      - run: python -m unittest -v tests.test_mcp_bridge tests.test_evidence_import tests.test_evidence_dates tests.test_chatgpt_message_evidence tests.test_history_review tests.test_history_watch tests.test_terminal_control tests.test_terminal_dashboard tests.test_terminal_brief tests.test_terminal_projects tests.test_terminal_runner tests.test_terminal_visual tests.test_terminal_chat_check tests.test_terminal_vault tests.test_terminal_focus tests.test_terminal_versions tests.test_terminal_context tests.test_audit_repairs tests.test_atomic_batch
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - run: python -m pip install -r requirements-core.txt
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: node tests/test_message_library.cjs
+      - run: node tests/test_progress_dashboard.cjs
+      - name: Compile
+        run: python -m compileall -q project_history_agent.py project_history_journal.py runtime_journal.py project_history_auditor.py project_history_hooks.py project_history_doctor.py history_adapters.py host_history_discovery.py host_history_cli.py candidate_ranking.py host_lifecycle_bridge.py native_hook_adapters.py native_hook_runner.py native_hook_config.py
+      - name: Repository smoke
+        run: python -m unittest -v tests.test_repository_smoke tests.test_host_native_adapters tests.test_segmented_journal tests.test_host_history_discovery tests.test_doctor_host_discovery tests.test_candidate_ranking tests.test_host_history_cli tests.test_native_lifecycle_stack
+      - name: Structural audit
+        run: python project_history_auditor.py PROJECT_MEMORY.json --json
+      - name: Doctor
+        run: python project_history_doctor.py . --no-screenshot-probe

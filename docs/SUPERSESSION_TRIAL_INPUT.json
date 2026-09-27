@@ -1,0 +1,45 @@
+{
+  "project_id": "project-history-agent",
+  "coverage": "Curated reconstruction of documented B1 implementation replacement, not automatically extracted original chat decisions",
+  "sources": [
+    {
+      "source_id": "AUDIT",
+      "locator": "docs/BLIND_AUDIT_2026-09-24.md"
+    },
+    {
+      "source_id": "REPAIR",
+      "locator": "docs/AUDIT_REPAIRS_2026-09-24.md"
+    }
+  ],
+  "decisions": [
+    {
+      "project_id": "project-history-agent",
+      "decision_id": "age-lock",
+      "text": "Прежняя реализация удаляла блокировку по возрасту.",
+      "evidence_status": "reported",
+      "source_ids": [
+        "AUDIT"
+      ]
+    },
+    {
+      "project_id": "project-history-agent",
+      "decision_id": "os-lock",
+      "text": "Использовать OS-backed блокировку portalocker вместо удаления по возрасту.",
+      "reason": "Возраст lock-файла не доказывает, что владелец завершён; живой writer мог потерять исключительный доступ.",
+      "supersedes": "age-lock",
+      "evidence_status": "reported",
+      "source_ids": [
+        "REPAIR"
+      ]
+    }
+  ],
+  "critical_constraints": [
+    {
+      "project_id": "project-history-agent",
+      "text": "Перед обновлением остановить старые FIX writers: смешанный протокол не поддержан.",
+      "source_ids": [
+        "REPAIR"
+      ]
+    }
+  ]
+}
