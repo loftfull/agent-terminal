@@ -32,6 +32,11 @@ jobs:
       - run: node tests/test_message_library.cjs
       - run: node tests/test_progress_dashboard.cjs
       - run: node tests/test_connections.cjs
+      - name: Dashboard DOM regression
+        run: |
+          npm install --prefix /tmp/terminal-dom-qa jsdom@26.1.0 --no-audit --no-fund
+          python terminal_dashboard.py --root . --project-id project-history-agent --export /tmp/terminal-dom.html
+          NODE_PATH=/tmp/terminal-dom-qa/node_modules node tests/test_dashboard_dom.cjs /tmp/terminal-dom.html
       - name: Compile
         run: python -m compileall -q project_history_agent.py project_history_journal.py runtime_journal.py project_history_auditor.py project_history_hooks.py project_history_doctor.py history_adapters.py host_history_discovery.py host_history_cli.py candidate_ranking.py host_lifecycle_bridge.py native_hook_adapters.py native_hook_runner.py native_hook_config.py
       - name: Repository smoke

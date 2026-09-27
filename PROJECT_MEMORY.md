@@ -11,7 +11,7 @@
 - Project ID: `project-history-agent`
 - Каноническая версия: v0.8.1-candidate.1 + browser observation correction; continuous ingestion and A6 open
 - Текущий чат: chat-current-project-history-agent
-- Следующий проверяемый шаг: Проверить интерфейс в доступном браузере: мобильный layout, клавиатура, контраст; затем спроектировать авторизованное подключение приватных репозиториев. A6 и непрерывный сбор чатов остаются открытыми.
+- Следующий проверяемый шаг: Провести визуальную проверку текущей панели в доступном браузере: мобильная компоновка, Escape/Tab в native dialog, контраст. Логические UX-исправления и DOM regression готовы; A6 остаётся открытым.
 - Правило продолжения: сначала прочитать этот отчёт и PROJECT_MEMORY.json; не повышать reported/planned до verified без новой проверки.
 
 ## CRITICAL_CONSTRAINTS — обязательные ограничения
@@ -181,6 +181,11 @@
 - 2026-09-27T10:23:54.753798+00:00 · **observed** · Local run running
 - 2026-09-27T10:23:54.841048+00:00 · **observed** · Local run succeeded
 - 2026-09-27T10:23:54.967072+00:00 · **reported** · Реализованы GitHub observation и scoped chat handoff; независимое code UX review. 228 Python tests и Node PASS; визуальная приёмка открыта.
+- 2026-09-27T10:53:41.396744+00:00 · **reported** · Исправления UX-экспертизы: навигация и доступность
+- 2026-09-27T10:53:41.593580+00:00 · **observed** · Local run starting
+- 2026-09-27T10:53:41.690987+00:00 · **observed** · Local run running
+- 2026-09-27T10:53:42.273470+00:00 · **observed** · Local run succeeded
+- 2026-09-27T10:53:42.454295+00:00 · **reported** · Исправлены навигация, конфликт window.history, исчезновение следующего шага, CSS приоритет и фокус. DOM regression PASS; browser visual review blocked.
 - 2026-09-15 · **verified** · Project History Agent originated in ChatGPT chat агент.
 - 2026-09-15 · **verified** · Current chat explicitly requested continuation from chat агент.
 - 2026-09-16 · **verified** · v0.5 durable history package passed its deterministic and real-project candidate gates; A6 remained NOT_RUN.
@@ -379,8 +384,13 @@
 - `SRC-EV-RUN-5e565ba474054c6cb6743495831d4679-running` — local-run:5e565ba474054c6cb6743495831d4679
 - `SRC-EV-RUN-5e565ba474054c6cb6743495831d4679-succeeded` — local-run:5e565ba474054c6cb6743495831d4679
 - `SRC-TERMINAL-8dd56a8978ba026706e927fb9cccbe391f68fa5c02cdd954b988fb5864710fa5` — terminal-cli:ux-connections-20260927/8dd56a8978ba026706e927fb9cccbe391f68fa5c02cdd954b988fb5864710fa5
+- `SRC-TERMINAL-57c7acd87e5278cbe856640b8cef8d62140b41c51c412000658683caa2243964` — terminal-cli:ux-review-fixes-20260927/57c7acd87e5278cbe856640b8cef8d62140b41c51c412000658683caa2243964
+- `SRC-EV-RUN-5ecd6196ab33491aa906c322ed990e61-starting` — local-run:5ecd6196ab33491aa906c322ed990e61
+- `SRC-EV-RUN-5ecd6196ab33491aa906c322ed990e61-running` — local-run:5ecd6196ab33491aa906c322ed990e61
+- `SRC-EV-RUN-5ecd6196ab33491aa906c322ed990e61-succeeded` — local-run:5ecd6196ab33491aa906c322ed990e61
+- `SRC-TERMINAL-23432af2335cf8a76951ee34e0c8d51e4122ead4ecb504d889d6de30a5d46725` — terminal-cli:ux-review-fixes-20260927/23432af2335cf8a76951ee34e0c8d51e4122ead4ecb504d889d6de30a5d46725
 
 ## 11. Передача
 - Текущий чат: chat-current-project-history-agent
-- Следующий шаг: Проверить интерфейс в доступном браузере: мобильный layout, клавиатура, контраст; затем спроектировать авторизованное подключение приватных репозиториев. A6 и непрерывный сбор чатов остаются открытыми.
-- Обновлено: 2026-09-27T10:23:55.100230+00:00
+- Следующий шаг: Провести визуальную проверку текущей панели в доступном браузере: мобильная компоновка, Escape/Tab в native dialog, контраст. Логические UX-исправления и DOM regression готовы; A6 остаётся открытым.
+- Обновлено: 2026-09-27T10:53:42.661794+00:00

@@ -3911,12 +3911,218 @@
       "source_ids": [],
       "summary": "Independent source UX review; constraints/focus preserved, wrong-project MCP removed, GitHub API 7/7 sections observed. See docs/UX_REVIEW_2026-09-27.md. Browser visual acceptance remains open.",
       "tool": "local checks"
+    },
+    {
+      "author": "contract submitter",
+      "dedupe_key": "32ebf1066f73aca6ea4874986395dff85d68a94320622a792a8c66555463fd70",
+      "event_id": "EV-TERMINAL-57c7acd87e5278cbe856640b8cef8d62140b41c51c412000658683caa2243964",
+      "event_type": "terminal_contract",
+      "evidence_status": "reported",
+      "model_id": "unknown",
+      "observed_at": "2026-09-27T10:53:41.417801+00:00",
+      "occurred_at": "2026-09-27T10:53:41.396744+00:00",
+      "session_id": "unknown",
+      "source_ids": [
+        "SRC-TERMINAL-57c7acd87e5278cbe856640b8cef8d62140b41c51c412000658683caa2243964"
+      ],
+      "summary": "Исправления UX-экспертизы: навигация и доступность",
+      "terminal_payload": {
+        "acceptance": [
+          "11 sections reachable",
+          "Next step remains visible",
+          "Visual browser review"
+        ],
+        "constraints": [
+          {
+            "reason": "Достоверная передача контекста",
+            "rule": "Не скрывать обязательные ограничения и источники"
+          }
+        ],
+        "deliverables": [
+          "Навигация 5+6",
+          "Исправленная История",
+          "DOM regression"
+        ],
+        "max_continuations": 1,
+        "purpose": "Упростить чтение и устранить ошибки переходов",
+        "stop_conditions": [
+          "Browser access blocked"
+        ],
+        "task_id": "ux-review-fixes-20260927",
+        "title": "Исправления UX-экспертизы: навигация и доступность"
+      },
+      "tool": "unknown"
+    },
+    {
+      "author": "local command supervisor",
+      "dedupe_key": "a4b76ce1bf8925551f11a95f31e1326de1a9b74ff872c94d783af0f2dfcd1a92",
+      "event_id": "EV-RUN-5ecd6196ab33491aa906c322ed990e61-starting",
+      "event_type": "terminal_run",
+      "evidence_status": "observed",
+      "model_id": "unknown",
+      "observed_at": "2026-09-27T10:53:41.615672+00:00",
+      "occurred_at": "2026-09-27T10:53:41.593580+00:00",
+      "runner_payload": {
+        "accepted": false,
+        "argv": [
+          "node",
+          "tests/test_dashboard_dom.cjs",
+          "/tmp/terminal-ux2.html"
+        ],
+        "attribution_status": "reported",
+        "continuation_count": 0,
+        "cwd": "/workspace/scratch/c911ac0d5396/repos/FIX",
+        "ended_at": null,
+        "exit_code": null,
+        "model_id": "unknown",
+        "output_limit_per_stream_bytes": 65536,
+        "process_id": null,
+        "project_id": "project-history-agent",
+        "run_id": "5ecd6196ab33491aa906c322ed990e61",
+        "runner_pid": 6,
+        "session_id": "ux-review-fixes-20260927",
+        "started_at": "2026-09-27T10:53:41.565985+00:00",
+        "status": "starting",
+        "task_id": "ux-review-fixes-20260927",
+        "timeout_seconds": 60
+      },
+      "session_id": "ux-review-fixes-20260927",
+      "source_ids": [
+        "SRC-EV-RUN-5ecd6196ab33491aa906c322ed990e61-starting"
+      ],
+      "summary": "Local run starting",
+      "tool": "unknown"
+    },
+    {
+      "author": "local command supervisor",
+      "dedupe_key": "5b8e650d3c626ee4117f726f58fc7665529710a9c2fc014fb85178b6be6f4672",
+      "event_id": "EV-RUN-5ecd6196ab33491aa906c322ed990e61-running",
+      "event_type": "terminal_run",
+      "evidence_status": "observed",
+      "model_id": "unknown",
+      "observed_at": "2026-09-27T10:53:41.712602+00:00",
+      "occurred_at": "2026-09-27T10:53:41.690987+00:00",
+      "runner_payload": {
+        "accepted": false,
+        "argv": [
+          "node",
+          "tests/test_dashboard_dom.cjs",
+          "/tmp/terminal-ux2.html"
+        ],
+        "attribution_status": "reported",
+        "continuation_count": 0,
+        "cwd": "/workspace/scratch/c911ac0d5396/repos/FIX",
+        "ended_at": null,
+        "exit_code": null,
+        "model_id": "unknown",
+        "output_limit_per_stream_bytes": 65536,
+        "process_id": 7,
+        "project_id": "project-history-agent",
+        "run_id": "5ecd6196ab33491aa906c322ed990e61",
+        "runner_pid": 6,
+        "session_id": "ux-review-fixes-20260927",
+        "start_event_id": "EV-RUN-5ecd6196ab33491aa906c322ed990e61-starting",
+        "started_at": "2026-09-27T10:53:41.565985+00:00",
+        "status": "running",
+        "task_id": "ux-review-fixes-20260927",
+        "timeout_seconds": 60
+      },
+      "session_id": "ux-review-fixes-20260927",
+      "source_ids": [
+        "SRC-EV-RUN-5ecd6196ab33491aa906c322ed990e61-running"
+      ],
+      "summary": "Local run running",
+      "tool": "unknown"
+    },
+    {
+      "author": "local command supervisor",
+      "dedupe_key": "af7729843bbdd1047ded1df0d909ed167246789e47e0eb3fcf1d3a182e63665a",
+      "event_id": "EV-RUN-5ecd6196ab33491aa906c322ed990e61-succeeded",
+      "event_type": "terminal_run",
+      "evidence_status": "observed",
+      "model_id": "unknown",
+      "observed_at": "2026-09-27T10:53:42.294510+00:00",
+      "occurred_at": "2026-09-27T10:53:42.273470+00:00",
+      "runner_payload": {
+        "accepted": false,
+        "argv": [
+          "node",
+          "tests/test_dashboard_dom.cjs",
+          "/tmp/terminal-ux2.html"
+        ],
+        "attribution_status": "reported",
+        "continuation_count": 0,
+        "cwd": "/workspace/scratch/c911ac0d5396/repos/FIX",
+        "ended_at": "2026-09-27T10:53:42.248006+00:00",
+        "exit_code": 0,
+        "model_id": "unknown",
+        "output_limit_per_stream_bytes": 65536,
+        "process_id": 7,
+        "project_id": "project-history-agent",
+        "run_id": "5ecd6196ab33491aa906c322ed990e61",
+        "runner_pid": 6,
+        "session_id": "ux-review-fixes-20260927",
+        "start_event_id": "EV-RUN-5ecd6196ab33491aa906c322ed990e61-starting",
+        "started_at": "2026-09-27T10:53:41.565985+00:00",
+        "status": "succeeded",
+        "stderr": {
+          "bytes_seen": 0,
+          "capture_error": null,
+          "text": "",
+          "truncated": false
+        },
+        "stdout": {
+          "bytes_seen": 147,
+          "capture_error": null,
+          "text": "PASS: 11 sections, 5 primary actions, unique current state, panel focus, persistent next step, scoped handoff, modal close focus return (DOM only)\n",
+          "truncated": false
+        },
+        "task_id": "ux-review-fixes-20260927",
+        "timeout_seconds": 60
+      },
+      "session_id": "ux-review-fixes-20260927",
+      "source_ids": [
+        "SRC-EV-RUN-5ecd6196ab33491aa906c322ed990e61-succeeded"
+      ],
+      "summary": "Local run succeeded",
+      "tool": "unknown"
+    },
+    {
+      "author": "reported executor",
+      "dedupe_key": "bfcb51875a753c79f2ffadf42eefbcd6109e2593729ffa5769b8c36b223c5f0a",
+      "event_id": "EV-TERMINAL-23432af2335cf8a76951ee34e0c8d51e4122ead4ecb504d889d6de30a5d46725",
+      "event_type": "terminal_report",
+      "evidence_status": "reported",
+      "model_id": "unknown",
+      "observed_at": "2026-09-27T10:53:42.474725+00:00",
+      "occurred_at": "2026-09-27T10:53:42.454295+00:00",
+      "session_id": "unknown",
+      "source_ids": [
+        "SRC-TERMINAL-23432af2335cf8a76951ee34e0c8d51e4122ead4ecb504d889d6de30a5d46725"
+      ],
+      "summary": "Исправлены навигация, конфликт window.history, исчезновение следующего шага, CSS приоритет и фокус. DOM regression PASS; browser visual review blocked.",
+      "terminal_payload": {
+        "acceptance_results": [],
+        "blockers": [
+          "Визуальная приёмка недоступна: ERR_BLOCKED_BY_CLIENT"
+        ],
+        "continuation_count": 0,
+        "evidence_event_ids": [
+          "EV-RUN-5ecd6196ab33491aa906c322ed990e61-succeeded"
+        ],
+        "model_id": "unknown",
+        "session_id": "unknown",
+        "status": "review",
+        "summary": "Исправлены навигация, конфликт window.history, исчезновение следующего шага, CSS приоритет и фокус. DOM regression PASS; browser visual review blocked.",
+        "task_id": "ux-review-fixes-20260927"
+      },
+      "tool": "unknown"
     }
   ],
   "handoff": {
     "current_chat_id": "chat-current-project-history-agent",
-    "next_step": "Проверить интерфейс в доступном браузере: мобильный layout, клавиатура, контраст; затем спроектировать авторизованное подключение приватных репозиториев. A6 и непрерывный сбор чатов остаются открытыми.",
-    "updated_at": "2026-09-27T10:23:55.100230+00:00"
+    "next_step": "Провести визуальную проверку текущей панели в доступном браузере: мобильная компоновка, Escape/Tab в native dialog, контраст. Логические UX-исправления и DOM regression готовы; A6 остаётся открытым.",
+    "updated_at": "2026-09-27T10:53:42.661794+00:00"
   },
   "locations": [
     {
@@ -6473,6 +6679,167 @@
       "locator": "terminal-cli:ux-connections-20260927/8dd56a8978ba026706e927fb9cccbe391f68fa5c02cdd954b988fb5864710fa5",
       "presence_status": "observed",
       "source_id": "SRC-TERMINAL-8dd56a8978ba026706e927fb9cccbe391f68fa5c02cdd954b988fb5864710fa5"
+    },
+    {
+      "content_status": "reported",
+      "input": {
+        "acceptance": [
+          "11 sections reachable",
+          "Next step remains visible",
+          "Visual browser review"
+        ],
+        "constraints": [
+          {
+            "reason": "Достоверная передача контекста",
+            "rule": "Не скрывать обязательные ограничения и источники"
+          }
+        ],
+        "deliverables": [
+          "Навигация 5+6",
+          "Исправленная История",
+          "DOM regression"
+        ],
+        "max_continuations": 1,
+        "purpose": "Упростить чтение и устранить ошибки переходов",
+        "stop_conditions": [
+          "Browser access blocked"
+        ],
+        "task_id": "ux-review-fixes-20260927",
+        "title": "Исправления UX-экспертизы: навигация и доступность"
+      },
+      "kind": "terminal_cli",
+      "locator": "terminal-cli:ux-review-fixes-20260927/57c7acd87e5278cbe856640b8cef8d62140b41c51c412000658683caa2243964",
+      "presence_status": "observed",
+      "source_id": "SRC-TERMINAL-57c7acd87e5278cbe856640b8cef8d62140b41c51c412000658683caa2243964"
+    },
+    {
+      "content_status": "observed",
+      "input": {
+        "accepted": false,
+        "argv": [
+          "node",
+          "tests/test_dashboard_dom.cjs",
+          "/tmp/terminal-ux2.html"
+        ],
+        "attribution_status": "reported",
+        "continuation_count": 0,
+        "cwd": "/workspace/scratch/c911ac0d5396/repos/FIX",
+        "ended_at": null,
+        "exit_code": null,
+        "model_id": "unknown",
+        "output_limit_per_stream_bytes": 65536,
+        "process_id": null,
+        "project_id": "project-history-agent",
+        "run_id": "5ecd6196ab33491aa906c322ed990e61",
+        "runner_pid": 6,
+        "session_id": "ux-review-fixes-20260927",
+        "started_at": "2026-09-27T10:53:41.565985+00:00",
+        "status": "starting",
+        "task_id": "ux-review-fixes-20260927",
+        "timeout_seconds": 60
+      },
+      "kind": "local_process",
+      "locator": "local-run:5ecd6196ab33491aa906c322ed990e61",
+      "presence_status": "observed",
+      "source_id": "SRC-EV-RUN-5ecd6196ab33491aa906c322ed990e61-starting"
+    },
+    {
+      "content_status": "observed",
+      "input": {
+        "accepted": false,
+        "argv": [
+          "node",
+          "tests/test_dashboard_dom.cjs",
+          "/tmp/terminal-ux2.html"
+        ],
+        "attribution_status": "reported",
+        "continuation_count": 0,
+        "cwd": "/workspace/scratch/c911ac0d5396/repos/FIX",
+        "ended_at": null,
+        "exit_code": null,
+        "model_id": "unknown",
+        "output_limit_per_stream_bytes": 65536,
+        "process_id": 7,
+        "project_id": "project-history-agent",
+        "run_id": "5ecd6196ab33491aa906c322ed990e61",
+        "runner_pid": 6,
+        "session_id": "ux-review-fixes-20260927",
+        "start_event_id": "EV-RUN-5ecd6196ab33491aa906c322ed990e61-starting",
+        "started_at": "2026-09-27T10:53:41.565985+00:00",
+        "status": "running",
+        "task_id": "ux-review-fixes-20260927",
+        "timeout_seconds": 60
+      },
+      "kind": "local_process",
+      "locator": "local-run:5ecd6196ab33491aa906c322ed990e61",
+      "presence_status": "observed",
+      "source_id": "SRC-EV-RUN-5ecd6196ab33491aa906c322ed990e61-running"
+    },
+    {
+      "content_status": "observed",
+      "input": {
+        "accepted": false,
+        "argv": [
+          "node",
+          "tests/test_dashboard_dom.cjs",
+          "/tmp/terminal-ux2.html"
+        ],
+        "attribution_status": "reported",
+        "continuation_count": 0,
+        "cwd": "/workspace/scratch/c911ac0d5396/repos/FIX",
+        "ended_at": "2026-09-27T10:53:42.248006+00:00",
+        "exit_code": 0,
+        "model_id": "unknown",
+        "output_limit_per_stream_bytes": 65536,
+        "process_id": 7,
+        "project_id": "project-history-agent",
+        "run_id": "5ecd6196ab33491aa906c322ed990e61",
+        "runner_pid": 6,
+        "session_id": "ux-review-fixes-20260927",
+        "start_event_id": "EV-RUN-5ecd6196ab33491aa906c322ed990e61-starting",
+        "started_at": "2026-09-27T10:53:41.565985+00:00",
+        "status": "succeeded",
+        "stderr": {
+          "bytes_seen": 0,
+          "capture_error": null,
+          "text": "",
+          "truncated": false
+        },
+        "stdout": {
+          "bytes_seen": 147,
+          "capture_error": null,
+          "text": "PASS: 11 sections, 5 primary actions, unique current state, panel focus, persistent next step, scoped handoff, modal close focus return (DOM only)\n",
+          "truncated": false
+        },
+        "task_id": "ux-review-fixes-20260927",
+        "timeout_seconds": 60
+      },
+      "kind": "local_process",
+      "locator": "local-run:5ecd6196ab33491aa906c322ed990e61",
+      "presence_status": "observed",
+      "source_id": "SRC-EV-RUN-5ecd6196ab33491aa906c322ed990e61-succeeded"
+    },
+    {
+      "content_status": "reported",
+      "input": {
+        "acceptance_results": [],
+        "blockers": [
+          "Визуальная приёмка недоступна: ERR_BLOCKED_BY_CLIENT"
+        ],
+        "continuation_count": 0,
+        "evidence_event_ids": [
+          "EV-RUN-5ecd6196ab33491aa906c322ed990e61-succeeded"
+        ],
+        "model_id": "unknown",
+        "session_id": "unknown",
+        "status": "review",
+        "summary": "Исправлены навигация, конфликт window.history, исчезновение следующего шага, CSS приоритет и фокус. DOM regression PASS; browser visual review blocked.",
+        "task_id": "ux-review-fixes-20260927"
+      },
+      "kind": "terminal_cli",
+      "locator": "terminal-cli:ux-review-fixes-20260927/23432af2335cf8a76951ee34e0c8d51e4122ead4ecb504d889d6de30a5d46725",
+      "presence_status": "observed",
+      "source_id": "SRC-TERMINAL-23432af2335cf8a76951ee34e0c8d51e4122ead4ecb504d889d6de30a5d46725"
     }
   ],
   "versions": [
