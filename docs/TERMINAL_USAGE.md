@@ -102,3 +102,13 @@ HTML содержит состояние на момент экспорта, н�
 серверу. Можно открыть его обычным браузером. Snapshot содержит историю выбранного
 проекта: перед пересылкой учитывайте конфиденциальность. Исходные истории не
 выдаются в публичную сеть автоматически.
+
+## Consistent context pages (2026-09-27)
+
+Read L0/L1/L2, retain `journal_tip`, and pass it as `expected_journal_tip` on
+all subsequent MCP `read_context_layer` calls. CLI equivalent:
+`python fix.py context --root MEMORY --project-id PROJECT --level L2 --offset 1 --limit 1 --expected-journal-tip HASH`.
+On `status: STATE_CHANGED`, discard all collected pages and restart at offset 0.
+Without the optional token legacy latest-state reads remain supported, but pages
+from different calls are not pinned. This detects change; it does not retain MVCC
+snapshots or make original source coverage complete.

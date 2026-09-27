@@ -135,10 +135,10 @@ def create_server(root: str | Path, project_id: str, vault: str | Path | None = 
         return reader.event(event_id)
 
     @server.tool(annotations=annotations, structured_output=True)
-    def read_context_layer(level: str = 'L0', offset: int = 0, limit: int = 20) -> dict[str, Any]:
-        """Progressive structural context: L0 passport, L1 event index, L2 evidence pages."""
+    def read_context_layer(level: str = 'L0', offset: int = 0, limit: int = 20, expected_journal_tip: str | None = None) -> dict[str, Any]:
+        """L0 passport, L1 index, L2 evidence. Pin the first journal_tip on subsequent calls; STATE_CHANGED requires discarding pages and restarting."""
         from terminal_context import read_layer
-        return read_layer(root, project_id, level, offset, limit, vault=vault)
+        return read_layer(root, project_id, level, offset, limit, vault=vault, expected_journal_tip=expected_journal_tip)
 
     return server
 

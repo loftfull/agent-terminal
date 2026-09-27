@@ -11,7 +11,7 @@
 - Project ID: `project-history-agent`
 - Каноническая версия: v0.8.1-candidate.1 + browser observation correction; continuous ingestion and A6 open
 - Текущий чат: chat-current-project-history-agent
-- Следующий проверяемый шаг: Проверить сквозную передачу связанной истории по доступным исходным чатам: требования, отменённые решения, ветви и явные пробелы. Doctor race исправлен и проверен через runner; полная история, автосбор и A6 открыты.
+- Следующий проверяемый шаг: Проверить передачу связанной пары полных реальных архивов с эталоном требований и отмен; согласованная пагинация через MCP/CLI проверена на синтетических источниках. Автосбор и A6 открыты.
 - Правило продолжения: сначала прочитать этот отчёт и PROJECT_MEMORY.json; не повышать reported/planned до verified без новой проверки.
 
 ## CRITICAL_CONSTRAINTS — обязательные ограничения
@@ -34,7 +34,7 @@
 | github_code_checkpoint | https://github.com/loftfull/FIX/commit/f2628d2a65294c063b0098ceb84b3d011b8208a4 | project-history-agent-v0.7 | f2628d2a65294c063b0098ceb84b3d011b8208a4 | verified_code_checkpoint | 2026-09-16 |
 | local_checkout | /workspace/scratch/c911ac0d5396/repos/FIX | codex/history-mcp-foundation | f583fd84ea7505f399295b8c86ac17a868f92343 | historical_observation_before_audit_changes; resolve current checkout via git rev-parse HEAD | 2026-09-24 |
 | github_working_branch | https://github.com/loftfull/FIX/tree/codex/history-mcp-foundation | codex/history-mcp-foundation | 0b86b8391b9c5c532bc4f09bfa905bfcc7f22c71 | historical_ci_code_checkpoint; branch exists; latest HEAD not asserted | 2026-09-24 |
-| github_repository | https://github.com/loftfull/agent-terminal | English | — | destination_verified_empty_before_transfer | 2026-09-27 |
+| github_repository | https://github.com/loftfull/agent-terminal | English | fed0be04318d58100678fd21288db01437435fb8 | verified_import_checkpoint_before_context_changes | 2026-09-27 |
 
 ## 2. Цепочка чатов
 | Дата | Чат | Класс | Родитель | Основание |
@@ -171,6 +171,11 @@
 - 2026-09-24T18:27:49.568847+00:00 · **observed** · Local run succeeded
 - 2026-09-24T18:28:39.379853+00:00 · **reported** · Scoped checks passed; doctor overall WARN, product not accepted.
 - 2026-09-24T18:28:39.504931+00:00 · **reported** · Scoped checks passed; doctor overall WARN, product not accepted.
+- 2026-09-27T09:21:26.211983+00:00 · **reported** · Повторный аудит Arena и согласованная передача контекста
+- 2026-09-27T09:21:26.381854+00:00 · **observed** · Local run starting
+- 2026-09-27T09:21:26.484398+00:00 · **observed** · Local run running
+- 2026-09-27T09:21:37.869354+00:00 · **observed** · Local run succeeded
+- 2026-09-27T09:22:41.629921+00:00 · **reported** · 228 tests passed through terminal_runner; page consistency and synthetic stdio transfer verified; product acceptance open.
 - 2026-09-15 · **verified** · Project History Agent originated in ChatGPT chat агент.
 - 2026-09-15 · **verified** · Current chat explicitly requested continuation from chat агент.
 - 2026-09-16 · **verified** · v0.5 durable history package passed its deterministic and real-project candidate gates; A6 remained NOT_RUN.
@@ -203,6 +208,7 @@
 - 2026-09-24 · **reported** · microsoft/playwright: researched
 - 2026-09-24 · **reported** · restic/restic: researched
 - 2026-09-24 · **observed** · Actual FIX checkpoint restored into separate worktree. Code SHA and3changed component files match. Canonical history retained at original root; no app execution or real screenshot.
+- 2026-09-27 · **observed** · No Arena commits found on published refs. Added optional journal-tip guard and real subprocess synthetic transmission: 228 Python tests through terminal_runner and both JS suites PASS. Original archive completeness, continuous ingestion and A6 remain open.
 - unknown date · **observed** · Windows ran136 tests:3 assertions compared short8.3 paths with canonical paths. Expected paths corrected;30 affected local tests pass. Windows rerun pending. Journal-tail loss reproduced in diagnostic probe; cause remains unknown.
 - unknown date · **observed** · Integrated adapted MIT i-have-adhd focus and eventsourcing9.5.5 SQLite witness.190 local testsPASS,47 independent component checksPASS. Real18messages MCP preserved; controlledrollback rejected and recovered in newfolder. Natural loss cause and reappearinglock remain unknown. ACP/restic/Playwright evaluated, not connected.
 - unknown date · **observed** · Windows158tests found4cleanup errors: SQLite handle leaked by eventsourcing9.5.5 connection setup failure and test fixtures. Narrow local pool closes handle on setup error; fixtures explicitly close. New resource regression added;48 related local checksPASS. Windowsrerun pending; original journal rollback stillunknown.
@@ -354,8 +360,14 @@
 - `SRC-TERMINAL-a597839b8aa1eb67b3ac0e7956973a564ef9bbdbe7dc986c95cfab78f38b8f07` — terminal-cli:DOCTOR-CONSISTENCY-20260924-DOCTOR/a597839b8aa1eb67b3ac0e7956973a564ef9bbdbe7dc986c95cfab78f38b8f07
 - `S-VISUAL-PROGRESS-20260924` — Визуальная карта планов и аудитов
 - `S-REPO-MIGRATION-20260927` — Agent Terminal repository migration
+- `SRC-TERMINAL-02b2593a2a39ba15ef7af3f82af69146162aeed6fcdd16d994c8bd590f2cd39c` — terminal-cli:CONTEXT-CONSISTENCY-20260927/02b2593a2a39ba15ef7af3f82af69146162aeed6fcdd16d994c8bd590f2cd39c
+- `SRC-EV-RUN-120d1e4ee9e74daea4293931100c59fc-starting` — local-run:120d1e4ee9e74daea4293931100c59fc
+- `SRC-EV-RUN-120d1e4ee9e74daea4293931100c59fc-running` — local-run:120d1e4ee9e74daea4293931100c59fc
+- `SRC-EV-RUN-120d1e4ee9e74daea4293931100c59fc-succeeded` — local-run:120d1e4ee9e74daea4293931100c59fc
+- `S-ARENA-REAUDIT-20260927` — Arena re-audit and actual context transmission tests
+- `SRC-TERMINAL-2a029d596d0708dcaf47ba4805ceb94925f15be9128474615c67b3e06ae8b6a6` — terminal-cli:CONTEXT-CONSISTENCY-20260927/2a029d596d0708dcaf47ba4805ceb94925f15be9128474615c67b3e06ae8b6a6
 
 ## 11. Передача
 - Текущий чат: chat-current-project-history-agent
-- Следующий шаг: Проверить сквозную передачу связанной истории по доступным исходным чатам: требования, отменённые решения, ветви и явные пробелы. Doctor race исправлен и проверен через runner; полная история, автосбор и A6 открыты.
-- Обновлено: 2026-09-27T07:01:02.489528+00:00
+- Следующий шаг: Проверить передачу связанной пары полных реальных архивов с эталоном требований и отмен; согласованная пагинация через MCP/CLI проверена на синтетических источниках. Автосбор и A6 открыты.
+- Обновлено: 2026-09-27T09:22:41.656876+00:00

@@ -28,10 +28,10 @@ def main():
         if name=='attach':
             a.add_argument('--input',required=True);a.add_argument('--session',required=True)
         else:
-            a.add_argument('--level',choices=['L0','L1','L2'],default='L0');a.add_argument('--offset',type=int,default=0);a.add_argument('--limit',type=int,default=20)
+            a.add_argument('--expected-journal-tip');a.add_argument('--level',choices=['L0','L1','L2'],default='L0');a.add_argument('--offset',type=int,default=0);a.add_argument('--limit',type=int,default=20)
     a=p.parse_args()
     try:
-        result=attach(a.root,a.project_id,a.input,a.session) if a.command=='attach' else read_layer(a.root,a.project_id,a.level,a.offset,a.limit)
+        result=attach(a.root,a.project_id,a.input,a.session) if a.command=='attach' else read_layer(a.root,a.project_id,a.level,a.offset,a.limit,expected_journal_tip=a.expected_journal_tip)
     except (ValueError,OSError,KeyError,TypeError):
         p.exit(2,'Source/project validation failed; check selected input and journal locally.\n')
     print(json.dumps(result,ensure_ascii=True,indent=2))

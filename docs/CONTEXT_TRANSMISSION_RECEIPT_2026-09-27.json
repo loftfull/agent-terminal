@@ -1,0 +1,41 @@
+{
+  "run_id": "120d1e4ee9e74daea4293931100c59fc",
+  "project_id": "project-history-agent",
+  "task_id": "CONTEXT-CONSISTENCY-20260927",
+  "argv": [
+    "/tmp/agent-terminal-venv/bin/python",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests"
+  ],
+  "cwd": "/workspace/scratch/c911ac0d5396/repos/FIX",
+  "timeout_seconds": 120,
+  "model_id": "unknown",
+  "session_id": "unknown",
+  "attribution_status": "reported",
+  "continuation_count": 0,
+  "started_at": "2026-09-27T09:21:26.361283+00:00",
+  "ended_at": "2026-09-27T09:21:37.847259+00:00",
+  "exit_code": 0,
+  "status": "succeeded",
+  "accepted": false,
+  "runner_pid": 5,
+  "process_id": 6,
+  "output_limit_per_stream_bytes": 30000,
+  "start_event_id": "EV-RUN-120d1e4ee9e74daea4293931100c59fc-starting",
+  "stdout": {
+    "text": "{\"mcp_transmission_audit\": {\"status\": \"PASS\", \"fixture\": \"synthetic\", \"transport\": \"real stdio subprocess\", \"checks\": [\"ids\", \"full L2 payloads\", \"constraints\", \"sources\", \"supersession\", \"receipt hashes\", \"repeat import\", \"state change\", \"project scope\"], \"omissions\": [\"Original account archives not supplied\", \"Continuous ingestion not tested\", \"A6 remains open\"]}}\n",
+    "bytes_seen": 369,
+    "truncated": false,
+    "capture_error": null
+  },
+  "stderr": {
+    "text": "...........................................................................................Executing <Task pending name='Task-2' coro=<ProtocolTests.test_real_stdio_client_retrieves_existing_FIX_journal() running at /workspace/scratch/c911ac0d5396/repos/FIX/tests/test_mcp_bridge.py:108> cb=[_run_until_complete_cb() at /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:181] created at /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py:100> took 0.460 seconds\n.........................................................................................................................................\n----------------------------------------------------------------------\nRan 228 tests in 11.153s\n\nOK\n",
+    "bytes_seen": 794,
+    "truncated": false,
+    "capture_error": null
+  },
+  "event_id": "EV-RUN-120d1e4ee9e74daea4293931100c59fc-succeeded"
+}
