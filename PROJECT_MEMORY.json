@@ -4117,12 +4117,225 @@
         "task_id": "ux-review-fixes-20260927"
       },
       "tool": "unknown"
+    },
+    {
+      "author": "contract submitter",
+      "dedupe_key": "4098efb96d8adfd5c3de9ac6995a3034f542eafdfe8ba67fcbf67f7ef30413f3",
+      "event_id": "EV-TERMINAL-24b20684fa5a4c264cdbdf85189deb930beab4e4aa758b5955bcc1ad42d19f9a",
+      "event_type": "terminal_contract",
+      "evidence_status": "reported",
+      "model_id": "unknown",
+      "observed_at": "2026-09-27T11:16:37.689757+00:00",
+      "occurred_at": "2026-09-27T11:16:37.663671+00:00",
+      "session_id": "unknown",
+      "source_ids": [
+        "SRC-TERMINAL-24b20684fa5a4c264cdbdf85189deb930beab4e4aa758b5955bcc1ad42d19f9a"
+      ],
+      "summary": "Аналоги GitHub: наблюдаемость и полнота данных",
+      "terminal_payload": {
+        "acceptance": [
+          "Combined filters correct",
+          "Pagination and errors preserved",
+          "DOM navigation unaffected"
+        ],
+        "constraints": [
+          {
+            "reason": "Нет heartbeat",
+            "rule": "Без вывода live activity из статуса запуска"
+          }
+        ],
+        "deliverables": [
+          "Сравнение 4 решений",
+          "Фильтры запусков",
+          "GitHub receipts"
+        ],
+        "max_continuations": 1,
+        "purpose": "Упростить поиск доказательств и показать ограничения GitHub-выборки",
+        "stop_conditions": [
+          "Нет доказательств лицензии до копирования"
+        ],
+        "task_id": "analog-adaptation-20260927",
+        "title": "Аналоги GitHub: наблюдаемость и полнота данных"
+      },
+      "tool": "unknown"
+    },
+    {
+      "author": "local command supervisor",
+      "dedupe_key": "84b45663dad78ef08e625765977d5cdb4a828f0e991350b60b17b8440f217c1f",
+      "event_id": "EV-RUN-a21c8d36cd6b4329aa0f45a1ef5fb828-starting",
+      "event_type": "terminal_run",
+      "evidence_status": "observed",
+      "model_id": "unknown",
+      "observed_at": "2026-09-27T11:16:37.899812+00:00",
+      "occurred_at": "2026-09-27T11:16:37.876994+00:00",
+      "runner_payload": {
+        "accepted": false,
+        "argv": [
+          "node",
+          "tests/test_run_explorer.cjs"
+        ],
+        "attribution_status": "reported",
+        "continuation_count": 0,
+        "cwd": "/workspace/scratch/c911ac0d5396/repos/FIX",
+        "ended_at": null,
+        "exit_code": null,
+        "model_id": "unknown",
+        "output_limit_per_stream_bytes": 65536,
+        "process_id": null,
+        "project_id": "project-history-agent",
+        "run_id": "a21c8d36cd6b4329aa0f45a1ef5fb828",
+        "runner_pid": 6,
+        "session_id": "analog-adaptation-20260927",
+        "started_at": "2026-09-27T11:16:37.854324+00:00",
+        "status": "starting",
+        "task_id": "analog-adaptation-20260927",
+        "timeout_seconds": 60
+      },
+      "session_id": "analog-adaptation-20260927",
+      "source_ids": [
+        "SRC-EV-RUN-a21c8d36cd6b4329aa0f45a1ef5fb828-starting"
+      ],
+      "summary": "Local run starting",
+      "tool": "unknown"
+    },
+    {
+      "author": "local command supervisor",
+      "dedupe_key": "691d8bdf05b582295ef5249193304fb510a269eef19e73fb83f6a8021e373d2f",
+      "event_id": "EV-RUN-a21c8d36cd6b4329aa0f45a1ef5fb828-running",
+      "event_type": "terminal_run",
+      "evidence_status": "observed",
+      "model_id": "unknown",
+      "observed_at": "2026-09-27T11:16:38.003193+00:00",
+      "occurred_at": "2026-09-27T11:16:37.979063+00:00",
+      "runner_payload": {
+        "accepted": false,
+        "argv": [
+          "node",
+          "tests/test_run_explorer.cjs"
+        ],
+        "attribution_status": "reported",
+        "continuation_count": 0,
+        "cwd": "/workspace/scratch/c911ac0d5396/repos/FIX",
+        "ended_at": null,
+        "exit_code": null,
+        "model_id": "unknown",
+        "output_limit_per_stream_bytes": 65536,
+        "process_id": 7,
+        "project_id": "project-history-agent",
+        "run_id": "a21c8d36cd6b4329aa0f45a1ef5fb828",
+        "runner_pid": 6,
+        "session_id": "analog-adaptation-20260927",
+        "start_event_id": "EV-RUN-a21c8d36cd6b4329aa0f45a1ef5fb828-starting",
+        "started_at": "2026-09-27T11:16:37.854324+00:00",
+        "status": "running",
+        "task_id": "analog-adaptation-20260927",
+        "timeout_seconds": 60
+      },
+      "session_id": "analog-adaptation-20260927",
+      "source_ids": [
+        "SRC-EV-RUN-a21c8d36cd6b4329aa0f45a1ef5fb828-running"
+      ],
+      "summary": "Local run running",
+      "tool": "unknown"
+    },
+    {
+      "author": "local command supervisor",
+      "dedupe_key": "9569a27a94581d45de462820f0648d9bb8638c3d1d3a6c18eada64ba7faf79a8",
+      "event_id": "EV-RUN-a21c8d36cd6b4329aa0f45a1ef5fb828-succeeded",
+      "event_type": "terminal_run",
+      "evidence_status": "observed",
+      "model_id": "unknown",
+      "observed_at": "2026-09-27T11:16:38.128134+00:00",
+      "occurred_at": "2026-09-27T11:16:38.105647+00:00",
+      "runner_payload": {
+        "accepted": false,
+        "argv": [
+          "node",
+          "tests/test_run_explorer.cjs"
+        ],
+        "attribution_status": "reported",
+        "continuation_count": 0,
+        "cwd": "/workspace/scratch/c911ac0d5396/repos/FIX",
+        "ended_at": "2026-09-27T11:16:38.079902+00:00",
+        "exit_code": 0,
+        "model_id": "unknown",
+        "output_limit_per_stream_bytes": 65536,
+        "process_id": 7,
+        "project_id": "project-history-agent",
+        "run_id": "a21c8d36cd6b4329aa0f45a1ef5fb828",
+        "runner_pid": 6,
+        "session_id": "analog-adaptation-20260927",
+        "start_event_id": "EV-RUN-a21c8d36cd6b4329aa0f45a1ef5fb828-starting",
+        "started_at": "2026-09-27T11:16:37.854324+00:00",
+        "status": "succeeded",
+        "stderr": {
+          "bytes_seen": 0,
+          "capture_error": null,
+          "text": "",
+          "truncated": false
+        },
+        "stdout": {
+          "bytes_seen": 83,
+          "capture_error": null,
+          "text": "PASS: combined run filters, unknown model, immutable input, measured duration only\n",
+          "truncated": false
+        },
+        "task_id": "analog-adaptation-20260927",
+        "timeout_seconds": 60
+      },
+      "session_id": "analog-adaptation-20260927",
+      "source_ids": [
+        "SRC-EV-RUN-a21c8d36cd6b4329aa0f45a1ef5fb828-succeeded"
+      ],
+      "summary": "Local run succeeded",
+      "tool": "unknown"
+    },
+    {
+      "author": "reported executor",
+      "dedupe_key": "9b548c5455538c8e4d62b66781948d37c9dac17ba473a793a78255ccdc20d67d",
+      "event_id": "EV-TERMINAL-e1862dff7a361f010dfe8204368e49e3544ed306985f4148b7baed3812cc458c",
+      "event_type": "terminal_report",
+      "evidence_status": "reported",
+      "model_id": "unknown",
+      "observed_at": "2026-09-27T11:16:38.255168+00:00",
+      "occurred_at": "2026-09-27T11:16:38.233777+00:00",
+      "session_id": "unknown",
+      "source_ids": [
+        "SRC-TERMINAL-e1862dff7a361f010dfe8204368e49e3544ed306985f4148b7baed3812cc458c"
+      ],
+      "summary": "Изучены Langfuse, Agent Chat UI, Basic Memory, Octokit. Перенесён подход фильтрации и MIT Link parser. Node/DOM/dashboard checks PASS, visual QA open.",
+      "terminal_payload": {
+        "acceptance_results": [],
+        "blockers": [],
+        "continuation_count": 0,
+        "evidence_event_ids": [
+          "EV-RUN-a21c8d36cd6b4329aa0f45a1ef5fb828-succeeded"
+        ],
+        "model_id": "unknown",
+        "session_id": "unknown",
+        "status": "review",
+        "summary": "Изучены Langfuse, Agent Chat UI, Basic Memory, Octokit. Перенесён подход фильтрации и MIT Link parser. Node/DOM/dashboard checks PASS, visual QA open.",
+        "task_id": "analog-adaptation-20260927"
+      },
+      "tool": "unknown"
+    },
+    {
+      "author": "Codex",
+      "dedupe_key": "49c4f9398923895961d036e4156773fc85a17cd6a9640cfcbd90eefc63bfcd1f",
+      "event_id": "analog-comparison-20260927",
+      "evidence_status": "observed",
+      "model_id": "unknown",
+      "observed_at": "2026-09-27T11:16:38.362180+00:00",
+      "session_id": null,
+      "source_ids": [],
+      "summary": "Pinned SHA and licenses in docs/ANALOG_COMPARISON_2026-09-27.md. Langfuse-inspired run inspection and bounded Octokit Link adaptation implemented. HTTP fixture checks and DOM tests passed; no upstream applications or paid services installed.",
+      "tool": "repository research and local tests"
     }
   ],
   "handoff": {
     "current_chat_id": "chat-current-project-history-agent",
-    "next_step": "Провести визуальную проверку текущей панели в доступном браузере: мобильная компоновка, Escape/Tab в native dialog, контраст. Логические UX-исправления и DOM regression готовы; A6 остаётся открытым.",
-    "updated_at": "2026-09-27T10:53:42.661794+00:00"
+    "next_step": "Проверить визуально обозреватель запусков; затем спроектировать долговечный импорт выбранного GitHub-наблюдения с источниками и явным project_id. Авторизация private repos, live transport и A6 остаются открытыми.",
+    "updated_at": "2026-09-27T11:16:38.370814+00:00"
   },
   "locations": [
     {
@@ -6840,6 +7053,162 @@
       "locator": "terminal-cli:ux-review-fixes-20260927/23432af2335cf8a76951ee34e0c8d51e4122ead4ecb504d889d6de30a5d46725",
       "presence_status": "observed",
       "source_id": "SRC-TERMINAL-23432af2335cf8a76951ee34e0c8d51e4122ead4ecb504d889d6de30a5d46725"
+    },
+    {
+      "content_status": "reported",
+      "input": {
+        "acceptance": [
+          "Combined filters correct",
+          "Pagination and errors preserved",
+          "DOM navigation unaffected"
+        ],
+        "constraints": [
+          {
+            "reason": "Нет heartbeat",
+            "rule": "Без вывода live activity из статуса запуска"
+          }
+        ],
+        "deliverables": [
+          "Сравнение 4 решений",
+          "Фильтры запусков",
+          "GitHub receipts"
+        ],
+        "max_continuations": 1,
+        "purpose": "Упростить поиск доказательств и показать ограничения GitHub-выборки",
+        "stop_conditions": [
+          "Нет доказательств лицензии до копирования"
+        ],
+        "task_id": "analog-adaptation-20260927",
+        "title": "Аналоги GitHub: наблюдаемость и полнота данных"
+      },
+      "kind": "terminal_cli",
+      "locator": "terminal-cli:analog-adaptation-20260927/24b20684fa5a4c264cdbdf85189deb930beab4e4aa758b5955bcc1ad42d19f9a",
+      "presence_status": "observed",
+      "source_id": "SRC-TERMINAL-24b20684fa5a4c264cdbdf85189deb930beab4e4aa758b5955bcc1ad42d19f9a"
+    },
+    {
+      "content_status": "observed",
+      "input": {
+        "accepted": false,
+        "argv": [
+          "node",
+          "tests/test_run_explorer.cjs"
+        ],
+        "attribution_status": "reported",
+        "continuation_count": 0,
+        "cwd": "/workspace/scratch/c911ac0d5396/repos/FIX",
+        "ended_at": null,
+        "exit_code": null,
+        "model_id": "unknown",
+        "output_limit_per_stream_bytes": 65536,
+        "process_id": null,
+        "project_id": "project-history-agent",
+        "run_id": "a21c8d36cd6b4329aa0f45a1ef5fb828",
+        "runner_pid": 6,
+        "session_id": "analog-adaptation-20260927",
+        "started_at": "2026-09-27T11:16:37.854324+00:00",
+        "status": "starting",
+        "task_id": "analog-adaptation-20260927",
+        "timeout_seconds": 60
+      },
+      "kind": "local_process",
+      "locator": "local-run:a21c8d36cd6b4329aa0f45a1ef5fb828",
+      "presence_status": "observed",
+      "source_id": "SRC-EV-RUN-a21c8d36cd6b4329aa0f45a1ef5fb828-starting"
+    },
+    {
+      "content_status": "observed",
+      "input": {
+        "accepted": false,
+        "argv": [
+          "node",
+          "tests/test_run_explorer.cjs"
+        ],
+        "attribution_status": "reported",
+        "continuation_count": 0,
+        "cwd": "/workspace/scratch/c911ac0d5396/repos/FIX",
+        "ended_at": null,
+        "exit_code": null,
+        "model_id": "unknown",
+        "output_limit_per_stream_bytes": 65536,
+        "process_id": 7,
+        "project_id": "project-history-agent",
+        "run_id": "a21c8d36cd6b4329aa0f45a1ef5fb828",
+        "runner_pid": 6,
+        "session_id": "analog-adaptation-20260927",
+        "start_event_id": "EV-RUN-a21c8d36cd6b4329aa0f45a1ef5fb828-starting",
+        "started_at": "2026-09-27T11:16:37.854324+00:00",
+        "status": "running",
+        "task_id": "analog-adaptation-20260927",
+        "timeout_seconds": 60
+      },
+      "kind": "local_process",
+      "locator": "local-run:a21c8d36cd6b4329aa0f45a1ef5fb828",
+      "presence_status": "observed",
+      "source_id": "SRC-EV-RUN-a21c8d36cd6b4329aa0f45a1ef5fb828-running"
+    },
+    {
+      "content_status": "observed",
+      "input": {
+        "accepted": false,
+        "argv": [
+          "node",
+          "tests/test_run_explorer.cjs"
+        ],
+        "attribution_status": "reported",
+        "continuation_count": 0,
+        "cwd": "/workspace/scratch/c911ac0d5396/repos/FIX",
+        "ended_at": "2026-09-27T11:16:38.079902+00:00",
+        "exit_code": 0,
+        "model_id": "unknown",
+        "output_limit_per_stream_bytes": 65536,
+        "process_id": 7,
+        "project_id": "project-history-agent",
+        "run_id": "a21c8d36cd6b4329aa0f45a1ef5fb828",
+        "runner_pid": 6,
+        "session_id": "analog-adaptation-20260927",
+        "start_event_id": "EV-RUN-a21c8d36cd6b4329aa0f45a1ef5fb828-starting",
+        "started_at": "2026-09-27T11:16:37.854324+00:00",
+        "status": "succeeded",
+        "stderr": {
+          "bytes_seen": 0,
+          "capture_error": null,
+          "text": "",
+          "truncated": false
+        },
+        "stdout": {
+          "bytes_seen": 83,
+          "capture_error": null,
+          "text": "PASS: combined run filters, unknown model, immutable input, measured duration only\n",
+          "truncated": false
+        },
+        "task_id": "analog-adaptation-20260927",
+        "timeout_seconds": 60
+      },
+      "kind": "local_process",
+      "locator": "local-run:a21c8d36cd6b4329aa0f45a1ef5fb828",
+      "presence_status": "observed",
+      "source_id": "SRC-EV-RUN-a21c8d36cd6b4329aa0f45a1ef5fb828-succeeded"
+    },
+    {
+      "content_status": "reported",
+      "input": {
+        "acceptance_results": [],
+        "blockers": [],
+        "continuation_count": 0,
+        "evidence_event_ids": [
+          "EV-RUN-a21c8d36cd6b4329aa0f45a1ef5fb828-succeeded"
+        ],
+        "model_id": "unknown",
+        "session_id": "unknown",
+        "status": "review",
+        "summary": "Изучены Langfuse, Agent Chat UI, Basic Memory, Octokit. Перенесён подход фильтрации и MIT Link parser. Node/DOM/dashboard checks PASS, visual QA open.",
+        "task_id": "analog-adaptation-20260927"
+      },
+      "kind": "terminal_cli",
+      "locator": "terminal-cli:analog-adaptation-20260927/e1862dff7a361f010dfe8204368e49e3544ed306985f4148b7baed3812cc458c",
+      "presence_status": "observed",
+      "source_id": "SRC-TERMINAL-e1862dff7a361f010dfe8204368e49e3544ed306985f4148b7baed3812cc458c"
     }
   ],
   "versions": [

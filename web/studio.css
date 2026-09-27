@@ -18,3 +18,5 @@ button,select,input,textarea{font:inherit}button,summary,select{min-height:44px}
 .connection-dialog .row{align-items:center}.connection-dialog .row>button{flex-shrink:0}.connection-dialog .meta,.meta,.sub{font-size:13px}
 .studio-run:hover{transform:none}.studio-run{border-radius:14px}.studio{border-radius:18px}.monitor{border-radius:14px;background:#f7fafc}
 @media(max-width:500px){.tabs{gap:2px}.tabs button{padding:10px 12px}.secondary-nav{display:grid;grid-template-columns:1fr 1fr}.secondary-nav button{text-align:left}.connection-buttons>button{flex:1 1 180px}.connection-dialog h2{font-size:19px}}
+
+.run-filters{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}.run-filters .search{flex:1 1 230px;margin:0}.run-filters select{min-height:44px;max-width:100%;padding:10px;border:1px solid #cbd9e3;border-radius:9px;background:white;color:inherit}#run-explorer{margin-top:20px}

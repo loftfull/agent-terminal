@@ -32,6 +32,8 @@ jobs:
       - run: node tests/test_message_library.cjs
       - run: node tests/test_progress_dashboard.cjs
       - run: node tests/test_connections.cjs
+      - run: node tests/test_github_receipts.cjs
+      - run: node tests/test_run_explorer.cjs
       - name: Dashboard DOM regression
         run: |
           npm install --prefix /tmp/terminal-dom-qa jsdom@26.1.0 --no-audit --no-fund

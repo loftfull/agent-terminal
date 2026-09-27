@@ -16,6 +16,7 @@ for(const button of d.querySelectorAll('[data-tab]')){
  assert.equal(d.activeElement.id,'content');assert.ok(d.querySelector('#content').children.length,button.dataset.tab+' '+errors.join(';')); 
 }
 d.querySelector('[data-tab=overview]').click();
+const runSearch=d.querySelector('#run-query');runSearch.value='NO_SUCH_RUN_928374';runSearch.dispatchEvent(new dom.window.Event('input'));assert.match(d.querySelector('#run-explorer').textContent,/Нет запусков/);runSearch.focus();d.querySelector('[data-tab=tasks]').click();assert.equal(d.querySelector('#content').getAttribute('aria-label'),'Задачи');assert.equal(d.querySelector('#run-explorer'),null);d.querySelector('[data-tab=overview]').click();
 const first=d.querySelector('#content>section');assert.match(first.textContent,/Сейчас/);
 const snapshot=JSON.parse(d.querySelector('#initial-state').textContent);
 const next=snapshot.focus?.next_step||snapshot.handoff?.next_step;

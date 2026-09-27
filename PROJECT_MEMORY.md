@@ -11,7 +11,7 @@
 - Project ID: `project-history-agent`
 - Каноническая версия: v0.8.1-candidate.1 + browser observation correction; continuous ingestion and A6 open
 - Текущий чат: chat-current-project-history-agent
-- Следующий проверяемый шаг: Провести визуальную проверку текущей панели в доступном браузере: мобильная компоновка, Escape/Tab в native dialog, контраст. Логические UX-исправления и DOM regression готовы; A6 остаётся открытым.
+- Следующий проверяемый шаг: Проверить визуально обозреватель запусков; затем спроектировать долговечный импорт выбранного GitHub-наблюдения с источниками и явным project_id. Авторизация private repos, live transport и A6 остаются открытыми.
 - Правило продолжения: сначала прочитать этот отчёт и PROJECT_MEMORY.json; не повышать reported/planned до verified без новой проверки.
 
 ## CRITICAL_CONSTRAINTS — обязательные ограничения
@@ -186,6 +186,11 @@
 - 2026-09-27T10:53:41.690987+00:00 · **observed** · Local run running
 - 2026-09-27T10:53:42.273470+00:00 · **observed** · Local run succeeded
 - 2026-09-27T10:53:42.454295+00:00 · **reported** · Исправлены навигация, конфликт window.history, исчезновение следующего шага, CSS приоритет и фокус. DOM regression PASS; browser visual review blocked.
+- 2026-09-27T11:16:37.663671+00:00 · **reported** · Аналоги GitHub: наблюдаемость и полнота данных
+- 2026-09-27T11:16:37.876994+00:00 · **observed** · Local run starting
+- 2026-09-27T11:16:37.979063+00:00 · **observed** · Local run running
+- 2026-09-27T11:16:38.105647+00:00 · **observed** · Local run succeeded
+- 2026-09-27T11:16:38.233777+00:00 · **reported** · Изучены Langfuse, Agent Chat UI, Basic Memory, Octokit. Перенесён подход фильтрации и MIT Link parser. Node/DOM/dashboard checks PASS, visual QA open.
 - 2026-09-15 · **verified** · Project History Agent originated in ChatGPT chat агент.
 - 2026-09-15 · **verified** · Current chat explicitly requested continuation from chat агент.
 - 2026-09-16 · **verified** · v0.5 durable history package passed its deterministic and real-project candidate gates; A6 remained NOT_RUN.
@@ -254,6 +259,7 @@
 - unknown date · **observed** · Исправлена потеря текстов/источников заменённых решений в review output. Новый тест RED→GREEN, 215 локальных тестов PASS. Читатель без контекста правильно разобрал документированный curated пример. Browser download event timed out; скачанные bytes не подтверждены.
 - unknown date · **reported** · Координатор наблюдал работающий HTML preview: вводная справка открывается, правила сохраняют открытое и закрытое состояние после перерисовки и перехода История → Обзор. Локальный live polling, пользовательская установка и внешний A6 не проверены этим испытанием.
 - unknown date · **requested** · Use terminal in current chat; audit history, plan completeness, context loss and donor benefits; GitHub-first before new features. Original message timestamp unknown; observed this session.
+- unknown date · **observed** · Pinned SHA and licenses in docs/ANALOG_COMPARISON_2026-09-27.md. Langfuse-inspired run inspection and bounded Octokit Link adaptation implemented. HTTP fixture checks and DOM tests passed; no upstream applications or paid services installed.
 - unknown date · **observed** · Independent source UX review; constraints/focus preserved, wrong-project MCP removed, GitHub API 7/7 sections observed. See docs/UX_REVIEW_2026-09-27.md. Browser visual acceptance remains open.
 
 ## 7. Варианты и ответвления
@@ -389,8 +395,13 @@
 - `SRC-EV-RUN-5ecd6196ab33491aa906c322ed990e61-running` — local-run:5ecd6196ab33491aa906c322ed990e61
 - `SRC-EV-RUN-5ecd6196ab33491aa906c322ed990e61-succeeded` — local-run:5ecd6196ab33491aa906c322ed990e61
 - `SRC-TERMINAL-23432af2335cf8a76951ee34e0c8d51e4122ead4ecb504d889d6de30a5d46725` — terminal-cli:ux-review-fixes-20260927/23432af2335cf8a76951ee34e0c8d51e4122ead4ecb504d889d6de30a5d46725
+- `SRC-TERMINAL-24b20684fa5a4c264cdbdf85189deb930beab4e4aa758b5955bcc1ad42d19f9a` — terminal-cli:analog-adaptation-20260927/24b20684fa5a4c264cdbdf85189deb930beab4e4aa758b5955bcc1ad42d19f9a
+- `SRC-EV-RUN-a21c8d36cd6b4329aa0f45a1ef5fb828-starting` — local-run:a21c8d36cd6b4329aa0f45a1ef5fb828
+- `SRC-EV-RUN-a21c8d36cd6b4329aa0f45a1ef5fb828-running` — local-run:a21c8d36cd6b4329aa0f45a1ef5fb828
+- `SRC-EV-RUN-a21c8d36cd6b4329aa0f45a1ef5fb828-succeeded` — local-run:a21c8d36cd6b4329aa0f45a1ef5fb828
+- `SRC-TERMINAL-e1862dff7a361f010dfe8204368e49e3544ed306985f4148b7baed3812cc458c` — terminal-cli:analog-adaptation-20260927/e1862dff7a361f010dfe8204368e49e3544ed306985f4148b7baed3812cc458c
 
 ## 11. Передача
 - Текущий чат: chat-current-project-history-agent
-- Следующий шаг: Провести визуальную проверку текущей панели в доступном браузере: мобильная компоновка, Escape/Tab в native dialog, контраст. Логические UX-исправления и DOM regression готовы; A6 остаётся открытым.
-- Обновлено: 2026-09-27T10:53:42.661794+00:00
+- Следующий шаг: Проверить визуально обозреватель запусков; затем спроектировать долговечный импорт выбранного GitHub-наблюдения с источниками и явным project_id. Авторизация private repos, live transport и A6 остаются открытыми.
+- Обновлено: 2026-09-27T11:16:38.370814+00:00

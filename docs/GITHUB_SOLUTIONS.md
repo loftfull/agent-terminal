@@ -204,3 +204,14 @@ omitted, no token collection. Bounded, non-atomic observations stay separate fro
 canonical memory. Acceptance: validator/error/abort/handoff tests and actual
 agent-terminal API read (all seven sections observed). Browser CORS, mobile layout,
 private auth and continuous synchronization remain unverified or unimplemented.
+
+## 2026-09-27 — сравнение аналогов и наблюдаемость запусков
+
+Поиск: `site:github.com langfuse langfuse agent tracing sessions`,
+`site:github.com langchain-ai agent-chat-ui`, `octokit plugin-paginate-rest.js link pagination`;
+Basic Memory открыт напрямую. Точные SHA, лицензии, цели, стоимость и границы
+зафиксированы в [сравнении](ANALOG_COMPARISON_2026-09-27.md). До реализации выбран
+подход Langfuse к просмотру сессий и bounded adaptation разбора HTTP Link Octokit.
+Полные приложения несовместимы с автономным plain-JS снимком без нового backend.
+Приёмка: фильтрация не теряет записи, длительность не выдумывается, ответ с Link
+помечается как неполный, HTTP 403/429 сохраняет диагностические метаданные.
