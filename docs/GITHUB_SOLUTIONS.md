@@ -189,3 +189,18 @@ https://github.com/loadingio/loading.css, revision
 определения агентов: показываются записи запусков с сообщённым model_id или unknown.
 Доступны pause и reduced-motion. Проверяемая польза: индикация транспорта
 и открытие источника каждой карточки; улучшение UX пользователями не измерено.
+
+## 2026-09-27 — GitHub observation and portable chat handoff
+
+Goal: inspect repository evidence and carry explicitly scoped context into another
+AI chat. Search: `octokit/request.js browser fetch GitHub REST`. Reviewed
+https://github.com/octokit/request.js at
+`723070ed2892a202f94d2e328ef81300c09ffb94`, README and MIT LICENSE (2018 Octokit
+contributors). Adapted the request/error-handling pattern, no donor code copied.
+A bundled Octokit dependency is unnecessary for seven fixed read-only endpoints
+in the existing standalone plain-JS dashboard. Native fetch preserves offline
+snapshot operation and adds no runtime dependency. Public API only; credentials
+omitted, no token collection. Bounded, non-atomic observations stay separate from
+canonical memory. Acceptance: validator/error/abort/handoff tests and actual
+agent-terminal API read (all seven sections observed). Browser CORS, mobile layout,
+private auth and continuous synchronization remain unverified or unimplemented.

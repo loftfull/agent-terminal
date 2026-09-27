@@ -1,0 +1,39 @@
+let repositoryObservation=null;
+function openConnectionDialog(kind){
+ const opener=document.activeElement,d=el('dialog',undefined,'connection-dialog'),bar=el('div',undefined,'row'),close=el('button','Закрыть');close.type='button';close.onclick=()=>d.close();append(bar,el('h2',kind==='github'?'Открыть GitHub':'Продолжить в AI-чате'),close);d.append(bar);d.setAttribute('aria-label',kind==='github'?'Открыть GitHub':'Продолжить в AI-чате');
+ let controller;d.addEventListener('close',()=>{controller?.abort();d.remove();opener?.focus()});document.body.append(d);
+ if(kind==='github'){
+  append(d,el('p','Вставьте ссылку на публичный репозиторий. Загрузим описание, README, языки, последние коммиты, задачи, PR, релизы и проверки.'));
+  const f=el('form'),label=el('label','Репозиторий GitHub'),input=el('input');input.id='repository-url';input.placeholder='https://github.com/owner/repo';input.required=true;input.autocomplete='off';label.htmlFor=input.id;const submit=el('button','Получить сведения','primary-action');submit.type='submit';append(f,label,input,submit);d.append(f);
+  d.append(el('p','Приватные репозитории требуют отдельного авторизованного подключения. Токены сюда не вводите. Сведения GitHub показываются отдельно от памяти открытого проекта.','meta'));
+  const status=el('p','Ожидание ссылки','meta');status.setAttribute('role','status');const results=el('div');append(d,status,results);
+  f.onsubmit=async e=>{e.preventDefault();controller?.abort();controller=new AbortController();const request=controller;const timer=setTimeout(()=>request.abort(),45000);submit.disabled=true;results.replaceChildren();status.textContent='Получаем сведения GitHub…';d.setAttribute('aria-busy','true');
+   try{const observed=await FixConnect.inspect(input.value,fetch,request.signal);if(!d.isConnected||request.signal.aborted)return;repositoryObservation=observed;status.textContent='Разделов получено: '+Object.values(observed.sections).filter(v=>v.status==='observed').length+' из 7 · '+observed.repository+' · '+new Date(observed.observed_at).toLocaleString('ru-RU');
+    results.append(el('h3',observed.metadata.full_name));results.append(el('p',observed.metadata.description||'Описание отсутствует'));safeLink(results,observed.metadata.html_url);
+    results.append(el('p','Основная ветка: '+observed.metadata.default_branch+' · Лицензия: '+(observed.metadata.license?.spdx_id||'не указана'),'meta'));
+    const names={commits:'Последние 10 коммитов',issues:'До 20 открытых задач (API включает PR)',pulls:'До 20 открытых PR',releases:'Последние 5 релизов',actions:'Последние 10 запусков CI',languages:'Языки',readme:'README'};
+    Object.entries(observed.sections).forEach(([k,v])=>{const part=el('details');part.append(el('summary',names[k]+' · '+(v.status==='observed'?'получено':'недоступно')));let text=v.error||JSON.stringify(v.data,null,2);if(k==='readme'&&v.data?.encoding==='base64'){try{text=new TextDecoder().decode(Uint8Array.from(atob(v.data.content.replace(/\s/g,'')),c=>c.charCodeAt(0)))}catch{text='README не удалось декодировать'}}if(v.status==='observed'&&k!=='readme'){
+     const rows=k==='actions'?v.data.workflow_runs:Array.isArray(v.data)?v.data:[];
+     if(k==='languages')part.append(el('p',Object.keys(v.data).join(' · ')||'Языки не определены'));
+     else if(!rows?.length)part.append(el('p','Записей в этой выборке нет'));
+     (rows||[]).forEach(item=>{const line=el('p');line.append(el('span',k==='commits'?(item.commit?.message||'').split('\n')[0]:item.title||item.name||item.tag_name||'Без названия'));line.append(el('span',' · '+(item.conclusion||item.status||item.state||item.commit?.author?.date||item.published_at||''),'meta'));if(item.html_url)safeLink(line,item.html_url);part.append(line)});
+     const raw=el('details');raw.append(el('summary','Исходные данные JSON'));raw.append(el('pre',text,'connection-data'));part.append(raw);
+    }else part.append(el('pre',text,'connection-data'));results.append(part)});
+    results.append(el('p','Это ограниченная выборка, не полный архив. Разделы получены отдельными запросами. Содержимое репозитория не исполняется.','meta'));
+    const transfer=el('button','Передать этот репозиторий в AI-чат','primary-action');transfer.onclick=()=>{d.close();openConnectionDialog('chat-repository')};results.append(transfer);
+   }catch(err){if(d.isConnected)status.textContent=request.signal.aborted?'Загрузка прервана или превышено время ожидания. Повторите запрос.':err.message}
+   finally{clearTimeout(timer);if(d.isConnected){submit.disabled=false;d.removeAttribute('aria-busy')}}};
+ }else{
+  const data=kind==='chat-repository'?repositoryObservation:state;
+  if(!data){d.append(el('p','Сначала загрузите сведения проекта.'));d.showModal();return}
+  d.append(el('p',kind==='chat-repository'?'Контекст выбранного GitHub-репозитория: '+data.repository:'Контекст текущего проекта: '+(data.project?.name||data.project?.project_id)));
+  d.append(el('p','Скопируйте текст в новый или существующий чат любой модели, принимающей текст. Это перенос контекста, а не автоматический доступ к истории аккаунта. Большой пакет можно приложить JSON-файлом.'));
+  const destination=el('select');destination.setAttribute('aria-label','Назначение передачи');[['new','Новый чат'],['existing','Существующий чат']].forEach(([v,t])=>{const o=el('option',t);o.value=v;destination.append(o)});d.append(destination);const includeLabel=el('label'),include=el('input');include.type='checkbox';include.style.width='auto';include.style.display='inline';append(includeLabel,include,el('span',' Включить весь JSON в промпт (может быть большим)'));d.append(includeLabel);
+  const area=el('textarea');area.value=FixConnect.prompt(data);destination.onchange=include.onchange=()=>{area.value=FixConnect.prompt(data,{full:include.checked,existing:destination.value==='existing'})};area.readOnly=true;area.rows=10;area.setAttribute('aria-label','Промпт с контекстом для AI-чата');d.append(area);
+  const row=el('div',undefined,'connection-buttons'),copy=el('button','Скопировать промпт','primary-action'),download=el('button','Скачать JSON'),status=el('p','','meta');status.setAttribute('role','status');
+  copy.onclick=async()=>{try{await navigator.clipboard.writeText(area.value);status.textContent=include.checked?'Промпт с полным контекстом скопирован':'Инструкция скопирована. Вставьте её в чат и приложите скачанный JSON'}catch{area.focus();area.select();status.textContent='Текст выделен — используйте «Копировать» в меню устройства.'}};
+  download.onclick=()=>{const u=URL.createObjectURL(new Blob([JSON.stringify(data,null,2)],{type:'application/json;charset=utf-8'}));const a=el('a');a.href=u;a.download=kind==='chat-repository'?'github-project-context.json':'terminal-project-context.json';a.click();setTimeout(()=>URL.revokeObjectURL(u),1000);status.textContent='Запрос на скачивание отправлен'};append(row,copy,download);append(d,row,status);
+  const advanced=el('details');advanced.append(el('summary','Постоянное чтение памяти через MCP — для совместимых приложений'));append(advanced,el('p','Это шаблон настройки, не установленное подключение. Укажите абсолютные пути на своём компьютере и установите зависимости requirements-core.txt и requirements-mcp.txt. Для GitHub-наблюдения сначала нужен отдельный импорт в журнал; этот JSON не является архивом чата.','meta'),el('pre',JSON.stringify({mcpServers:{'agent-terminal':{command:'ABSOLUTE_PATH_TO_PYTHON',args:['ABSOLUTE_PATH_TO/project_history_mcp.py','--root','ABSOLUTE_PATH_TO_MEMORY','--project-id',state?.project?.project_id||'PROJECT_ID']}}},null,2),'connection-data'),el('p','MCP здесь предоставляет чтение выбранного журнала. Старые сообщения добавляются отдельным импортом; произвольный чат автоматически не подключается.','meta'));if(kind!=='chat-repository')d.append(advanced);
+ }
+ d.showModal();
+}

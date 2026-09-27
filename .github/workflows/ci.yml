@@ -31,6 +31,7 @@ jobs:
           node-version: "22"
       - run: node tests/test_message_library.cjs
       - run: node tests/test_progress_dashboard.cjs
+      - run: node tests/test_connections.cjs
       - name: Compile
         run: python -m compileall -q project_history_agent.py project_history_journal.py runtime_journal.py project_history_auditor.py project_history_hooks.py project_history_doctor.py history_adapters.py host_history_discovery.py host_history_cli.py candidate_ranking.py host_lifecycle_bridge.py native_hook_adapters.py native_hook_runner.py native_hook_config.py
       - name: Repository smoke

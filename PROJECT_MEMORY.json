@@ -3697,12 +3697,226 @@
       ],
       "summary": "Vendored MIT loading.css; fetch-gated motion and factual run cards. Five dashboard tests pass; browser localhost blocked, visual acceptance open.",
       "tool": "unknown"
+    },
+    {
+      "author": "contract submitter",
+      "dedupe_key": "12f196c6c115de56ca428f0fb66869a8e552e3f05ac857ac341abb3726696469",
+      "event_id": "EV-TERMINAL-c5227df03d632d375a36849dc82f94df623da7e0826d0148845ce9d074c1656f",
+      "event_type": "terminal_contract",
+      "evidence_status": "reported",
+      "model_id": "unknown",
+      "observed_at": "2026-09-27T10:23:54.512438+00:00",
+      "occurred_at": "2026-09-27T10:23:54.492631+00:00",
+      "session_id": "unknown",
+      "source_ids": [
+        "SRC-TERMINAL-c5227df03d632d375a36849dc82f94df623da7e0826d0148845ce9d074c1656f"
+      ],
+      "summary": "GitHub и передача контекста в AI-чат",
+      "terminal_payload": {
+        "acceptance": [
+          "Scoped handoff tests pass",
+          "Browser visual review"
+        ],
+        "constraints": [
+          {
+            "reason": "Изоляция проектов",
+            "rule": "Не смешивать GitHub-наблюдение с текущей памятью"
+          }
+        ],
+        "deliverables": [
+          "Главные действия",
+          "Независимый UX review",
+          "Переносимый промпт и JSON"
+        ],
+        "max_continuations": 1,
+        "purpose": "Быстро понимать проект и продолжать работу с явной областью контекста",
+        "stop_conditions": [
+          "Требуется недоступная авторизация"
+        ],
+        "task_id": "ux-connections-20260927",
+        "title": "GitHub и передача контекста в AI-чат"
+      },
+      "tool": "unknown"
+    },
+    {
+      "author": "local command supervisor",
+      "dedupe_key": "4f8c7758eeb0d2cae9e23c8715b8bec86d35d7227dc51213bce5e764a6eab780",
+      "event_id": "EV-RUN-5e565ba474054c6cb6743495831d4679-starting",
+      "event_type": "terminal_run",
+      "evidence_status": "observed",
+      "model_id": "unknown",
+      "observed_at": "2026-09-27T10:23:54.685077+00:00",
+      "occurred_at": "2026-09-27T10:23:54.665829+00:00",
+      "runner_payload": {
+        "accepted": false,
+        "argv": [
+          "node",
+          "tests/test_connections.cjs"
+        ],
+        "attribution_status": "reported",
+        "continuation_count": 0,
+        "cwd": "/workspace/scratch/c911ac0d5396/repos/FIX",
+        "ended_at": null,
+        "exit_code": null,
+        "model_id": "unknown",
+        "output_limit_per_stream_bytes": 65536,
+        "process_id": null,
+        "project_id": "project-history-agent",
+        "run_id": "5e565ba474054c6cb6743495831d4679",
+        "runner_pid": 7,
+        "session_id": "ux-connections-20260927",
+        "started_at": "2026-09-27T10:23:54.645825+00:00",
+        "status": "starting",
+        "task_id": "ux-connections-20260927",
+        "timeout_seconds": 60
+      },
+      "session_id": "ux-connections-20260927",
+      "source_ids": [
+        "SRC-EV-RUN-5e565ba474054c6cb6743495831d4679-starting"
+      ],
+      "summary": "Local run starting",
+      "tool": "unknown"
+    },
+    {
+      "author": "local command supervisor",
+      "dedupe_key": "6583078cb49e4631ffaca5fe7cf348579f0574371b17936acc00205651605219",
+      "event_id": "EV-RUN-5e565ba474054c6cb6743495831d4679-running",
+      "event_type": "terminal_run",
+      "evidence_status": "observed",
+      "model_id": "unknown",
+      "observed_at": "2026-09-27T10:23:54.773181+00:00",
+      "occurred_at": "2026-09-27T10:23:54.753798+00:00",
+      "runner_payload": {
+        "accepted": false,
+        "argv": [
+          "node",
+          "tests/test_connections.cjs"
+        ],
+        "attribution_status": "reported",
+        "continuation_count": 0,
+        "cwd": "/workspace/scratch/c911ac0d5396/repos/FIX",
+        "ended_at": null,
+        "exit_code": null,
+        "model_id": "unknown",
+        "output_limit_per_stream_bytes": 65536,
+        "process_id": 8,
+        "project_id": "project-history-agent",
+        "run_id": "5e565ba474054c6cb6743495831d4679",
+        "runner_pid": 7,
+        "session_id": "ux-connections-20260927",
+        "start_event_id": "EV-RUN-5e565ba474054c6cb6743495831d4679-starting",
+        "started_at": "2026-09-27T10:23:54.645825+00:00",
+        "status": "running",
+        "task_id": "ux-connections-20260927",
+        "timeout_seconds": 60
+      },
+      "session_id": "ux-connections-20260927",
+      "source_ids": [
+        "SRC-EV-RUN-5e565ba474054c6cb6743495831d4679-running"
+      ],
+      "summary": "Local run running",
+      "tool": "unknown"
+    },
+    {
+      "author": "local command supervisor",
+      "dedupe_key": "d35fecf96bb3fa5c170cbe69e38e79c643f5035dcfac1a36d2b2157230a8a55e",
+      "event_id": "EV-RUN-5e565ba474054c6cb6743495831d4679-succeeded",
+      "event_type": "terminal_run",
+      "evidence_status": "observed",
+      "model_id": "unknown",
+      "observed_at": "2026-09-27T10:23:54.861904+00:00",
+      "occurred_at": "2026-09-27T10:23:54.841048+00:00",
+      "runner_payload": {
+        "accepted": false,
+        "argv": [
+          "node",
+          "tests/test_connections.cjs"
+        ],
+        "attribution_status": "reported",
+        "continuation_count": 0,
+        "cwd": "/workspace/scratch/c911ac0d5396/repos/FIX",
+        "ended_at": "2026-09-27T10:23:54.820121+00:00",
+        "exit_code": 0,
+        "model_id": "unknown",
+        "output_limit_per_stream_bytes": 65536,
+        "process_id": 8,
+        "project_id": "project-history-agent",
+        "run_id": "5e565ba474054c6cb6743495831d4679",
+        "runner_pid": 7,
+        "session_id": "ux-connections-20260927",
+        "start_event_id": "EV-RUN-5e565ba474054c6cb6743495831d4679-starting",
+        "started_at": "2026-09-27T10:23:54.645825+00:00",
+        "status": "succeeded",
+        "stderr": {
+          "bytes_seen": 0,
+          "capture_error": null,
+          "text": "",
+          "truncated": false
+        },
+        "stdout": {
+          "bytes_seen": 109,
+          "capture_error": null,
+          "text": "PASS: repository validation, public-only requests, partial failures, cancellation, scoped short/full handoff\n",
+          "truncated": false
+        },
+        "task_id": "ux-connections-20260927",
+        "timeout_seconds": 60
+      },
+      "session_id": "ux-connections-20260927",
+      "source_ids": [
+        "SRC-EV-RUN-5e565ba474054c6cb6743495831d4679-succeeded"
+      ],
+      "summary": "Local run succeeded",
+      "tool": "unknown"
+    },
+    {
+      "author": "reported executor",
+      "dedupe_key": "536d1b83d2f8cd102094936363c031bcd8d43f3947d6d73489949b4b49b98400",
+      "event_id": "EV-TERMINAL-8dd56a8978ba026706e927fb9cccbe391f68fa5c02cdd954b988fb5864710fa5",
+      "event_type": "terminal_report",
+      "evidence_status": "reported",
+      "model_id": "unknown",
+      "observed_at": "2026-09-27T10:23:54.988493+00:00",
+      "occurred_at": "2026-09-27T10:23:54.967072+00:00",
+      "session_id": "unknown",
+      "source_ids": [
+        "SRC-TERMINAL-8dd56a8978ba026706e927fb9cccbe391f68fa5c02cdd954b988fb5864710fa5"
+      ],
+      "summary": "Реализованы GitHub observation и scoped chat handoff; независимое code UX review. 228 Python tests и Node PASS; визуальная приёмка открыта.",
+      "terminal_payload": {
+        "acceptance_results": [],
+        "blockers": [
+          "Browser screenshot NOT_CAPTURED; private GitHub auth not implemented"
+        ],
+        "continuation_count": 0,
+        "evidence_event_ids": [
+          "EV-RUN-5e565ba474054c6cb6743495831d4679-succeeded"
+        ],
+        "model_id": "unknown",
+        "session_id": "unknown",
+        "status": "review",
+        "summary": "Реализованы GitHub observation и scoped chat handoff; независимое code UX review. 228 Python tests и Node PASS; визуальная приёмка открыта.",
+        "task_id": "ux-connections-20260927"
+      },
+      "tool": "unknown"
+    },
+    {
+      "author": "Codex",
+      "dedupe_key": "8eccc5ca12cac2b0ebd0b79d3eecfc776309eab10437fe6b702614fc878bae25",
+      "event_id": "ux-review-20260927",
+      "evidence_status": "observed",
+      "model_id": "unknown",
+      "observed_at": "2026-09-27T10:23:55.089845+00:00",
+      "session_id": null,
+      "source_ids": [],
+      "summary": "Independent source UX review; constraints/focus preserved, wrong-project MCP removed, GitHub API 7/7 sections observed. See docs/UX_REVIEW_2026-09-27.md. Browser visual acceptance remains open.",
+      "tool": "local checks"
     }
   ],
   "handoff": {
     "current_chat_id": "chat-current-project-history-agent",
-    "next_step": "Проверить передачу связанной пары полных реальных архивов с эталоном требований и отмен; согласованная пагинация через MCP/CLI проверена на синтетических источниках. Автосбор и A6 открыты.",
-    "updated_at": "2026-09-27T09:56:43.603500+00:00"
+    "next_step": "Проверить интерфейс в доступном браузере: мобильный layout, клавиатура, контраст; затем спроектировать авторизованное подключение приватных репозиториев. A6 и непрерывный сбор чатов остаются открытыми.",
+    "updated_at": "2026-09-27T10:23:55.100230+00:00"
   },
   "locations": [
     {
@@ -6102,6 +6316,163 @@
       "locator": "docs/STUDIO_MOTION_2026-09-27.md",
       "name": "Vendored studio motion",
       "source_id": "S-STUDIO-MOTION-20260927"
+    },
+    {
+      "content_status": "reported",
+      "input": {
+        "acceptance": [
+          "Scoped handoff tests pass",
+          "Browser visual review"
+        ],
+        "constraints": [
+          {
+            "reason": "Изоляция проектов",
+            "rule": "Не смешивать GitHub-наблюдение с текущей памятью"
+          }
+        ],
+        "deliverables": [
+          "Главные действия",
+          "Независимый UX review",
+          "Переносимый промпт и JSON"
+        ],
+        "max_continuations": 1,
+        "purpose": "Быстро понимать проект и продолжать работу с явной областью контекста",
+        "stop_conditions": [
+          "Требуется недоступная авторизация"
+        ],
+        "task_id": "ux-connections-20260927",
+        "title": "GitHub и передача контекста в AI-чат"
+      },
+      "kind": "terminal_cli",
+      "locator": "terminal-cli:ux-connections-20260927/c5227df03d632d375a36849dc82f94df623da7e0826d0148845ce9d074c1656f",
+      "presence_status": "observed",
+      "source_id": "SRC-TERMINAL-c5227df03d632d375a36849dc82f94df623da7e0826d0148845ce9d074c1656f"
+    },
+    {
+      "content_status": "observed",
+      "input": {
+        "accepted": false,
+        "argv": [
+          "node",
+          "tests/test_connections.cjs"
+        ],
+        "attribution_status": "reported",
+        "continuation_count": 0,
+        "cwd": "/workspace/scratch/c911ac0d5396/repos/FIX",
+        "ended_at": null,
+        "exit_code": null,
+        "model_id": "unknown",
+        "output_limit_per_stream_bytes": 65536,
+        "process_id": null,
+        "project_id": "project-history-agent",
+        "run_id": "5e565ba474054c6cb6743495831d4679",
+        "runner_pid": 7,
+        "session_id": "ux-connections-20260927",
+        "started_at": "2026-09-27T10:23:54.645825+00:00",
+        "status": "starting",
+        "task_id": "ux-connections-20260927",
+        "timeout_seconds": 60
+      },
+      "kind": "local_process",
+      "locator": "local-run:5e565ba474054c6cb6743495831d4679",
+      "presence_status": "observed",
+      "source_id": "SRC-EV-RUN-5e565ba474054c6cb6743495831d4679-starting"
+    },
+    {
+      "content_status": "observed",
+      "input": {
+        "accepted": false,
+        "argv": [
+          "node",
+          "tests/test_connections.cjs"
+        ],
+        "attribution_status": "reported",
+        "continuation_count": 0,
+        "cwd": "/workspace/scratch/c911ac0d5396/repos/FIX",
+        "ended_at": null,
+        "exit_code": null,
+        "model_id": "unknown",
+        "output_limit_per_stream_bytes": 65536,
+        "process_id": 8,
+        "project_id": "project-history-agent",
+        "run_id": "5e565ba474054c6cb6743495831d4679",
+        "runner_pid": 7,
+        "session_id": "ux-connections-20260927",
+        "start_event_id": "EV-RUN-5e565ba474054c6cb6743495831d4679-starting",
+        "started_at": "2026-09-27T10:23:54.645825+00:00",
+        "status": "running",
+        "task_id": "ux-connections-20260927",
+        "timeout_seconds": 60
+      },
+      "kind": "local_process",
+      "locator": "local-run:5e565ba474054c6cb6743495831d4679",
+      "presence_status": "observed",
+      "source_id": "SRC-EV-RUN-5e565ba474054c6cb6743495831d4679-running"
+    },
+    {
+      "content_status": "observed",
+      "input": {
+        "accepted": false,
+        "argv": [
+          "node",
+          "tests/test_connections.cjs"
+        ],
+        "attribution_status": "reported",
+        "continuation_count": 0,
+        "cwd": "/workspace/scratch/c911ac0d5396/repos/FIX",
+        "ended_at": "2026-09-27T10:23:54.820121+00:00",
+        "exit_code": 0,
+        "model_id": "unknown",
+        "output_limit_per_stream_bytes": 65536,
+        "process_id": 8,
+        "project_id": "project-history-agent",
+        "run_id": "5e565ba474054c6cb6743495831d4679",
+        "runner_pid": 7,
+        "session_id": "ux-connections-20260927",
+        "start_event_id": "EV-RUN-5e565ba474054c6cb6743495831d4679-starting",
+        "started_at": "2026-09-27T10:23:54.645825+00:00",
+        "status": "succeeded",
+        "stderr": {
+          "bytes_seen": 0,
+          "capture_error": null,
+          "text": "",
+          "truncated": false
+        },
+        "stdout": {
+          "bytes_seen": 109,
+          "capture_error": null,
+          "text": "PASS: repository validation, public-only requests, partial failures, cancellation, scoped short/full handoff\n",
+          "truncated": false
+        },
+        "task_id": "ux-connections-20260927",
+        "timeout_seconds": 60
+      },
+      "kind": "local_process",
+      "locator": "local-run:5e565ba474054c6cb6743495831d4679",
+      "presence_status": "observed",
+      "source_id": "SRC-EV-RUN-5e565ba474054c6cb6743495831d4679-succeeded"
+    },
+    {
+      "content_status": "reported",
+      "input": {
+        "acceptance_results": [],
+        "blockers": [
+          "Browser screenshot NOT_CAPTURED; private GitHub auth not implemented"
+        ],
+        "continuation_count": 0,
+        "evidence_event_ids": [
+          "EV-RUN-5e565ba474054c6cb6743495831d4679-succeeded"
+        ],
+        "model_id": "unknown",
+        "session_id": "unknown",
+        "status": "review",
+        "summary": "Реализованы GitHub observation и scoped chat handoff; независимое code UX review. 228 Python tests и Node PASS; визуальная приёмка открыта.",
+        "task_id": "ux-connections-20260927"
+      },
+      "kind": "terminal_cli",
+      "locator": "terminal-cli:ux-connections-20260927/8dd56a8978ba026706e927fb9cccbe391f68fa5c02cdd954b988fb5864710fa5",
+      "presence_status": "observed",
+      "source_id": "SRC-TERMINAL-8dd56a8978ba026706e927fb9cccbe391f68fa5c02cdd954b988fb5864710fa5"
     }
   ],
   "versions": [

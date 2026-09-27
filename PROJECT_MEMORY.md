@@ -11,7 +11,7 @@
 - Project ID: `project-history-agent`
 - Каноническая версия: v0.8.1-candidate.1 + browser observation correction; continuous ingestion and A6 open
 - Текущий чат: chat-current-project-history-agent
-- Следующий проверяемый шаг: Проверить передачу связанной пары полных реальных архивов с эталоном требований и отмен; согласованная пагинация через MCP/CLI проверена на синтетических источниках. Автосбор и A6 открыты.
+- Следующий проверяемый шаг: Проверить интерфейс в доступном браузере: мобильный layout, клавиатура, контраст; затем спроектировать авторизованное подключение приватных репозиториев. A6 и непрерывный сбор чатов остаются открытыми.
 - Правило продолжения: сначала прочитать этот отчёт и PROJECT_MEMORY.json; не повышать reported/planned до verified без новой проверки.
 
 ## CRITICAL_CONSTRAINTS — обязательные ограничения
@@ -176,6 +176,11 @@
 - 2026-09-27T09:21:26.484398+00:00 · **observed** · Local run running
 - 2026-09-27T09:21:37.869354+00:00 · **observed** · Local run succeeded
 - 2026-09-27T09:22:41.629921+00:00 · **reported** · 228 tests passed through terminal_runner; page consistency and synthetic stdio transfer verified; product acceptance open.
+- 2026-09-27T10:23:54.492631+00:00 · **reported** · GitHub и передача контекста в AI-чат
+- 2026-09-27T10:23:54.665829+00:00 · **observed** · Local run starting
+- 2026-09-27T10:23:54.753798+00:00 · **observed** · Local run running
+- 2026-09-27T10:23:54.841048+00:00 · **observed** · Local run succeeded
+- 2026-09-27T10:23:54.967072+00:00 · **reported** · Реализованы GitHub observation и scoped chat handoff; независимое code UX review. 228 Python tests и Node PASS; визуальная приёмка открыта.
 - 2026-09-15 · **verified** · Project History Agent originated in ChatGPT chat агент.
 - 2026-09-15 · **verified** · Current chat explicitly requested continuation from chat агент.
 - 2026-09-16 · **verified** · v0.5 durable history package passed its deterministic and real-project candidate gates; A6 remained NOT_RUN.
@@ -244,6 +249,7 @@
 - unknown date · **observed** · Исправлена потеря текстов/источников заменённых решений в review output. Новый тест RED→GREEN, 215 локальных тестов PASS. Читатель без контекста правильно разобрал документированный curated пример. Browser download event timed out; скачанные bytes не подтверждены.
 - unknown date · **reported** · Координатор наблюдал работающий HTML preview: вводная справка открывается, правила сохраняют открытое и закрытое состояние после перерисовки и перехода История → Обзор. Локальный live polling, пользовательская установка и внешний A6 не проверены этим испытанием.
 - unknown date · **requested** · Use terminal in current chat; audit history, plan completeness, context loss and donor benefits; GitHub-first before new features. Original message timestamp unknown; observed this session.
+- unknown date · **observed** · Independent source UX review; constraints/focus preserved, wrong-project MCP removed, GitHub API 7/7 sections observed. See docs/UX_REVIEW_2026-09-27.md. Browser visual acceptance remains open.
 
 ## 7. Варианты и ответвления
 - `v0.3-ledger-auditor` — v0.3 deterministic ledger · archived
@@ -368,8 +374,13 @@
 - `S-ARENA-REAUDIT-20260927` — Arena re-audit and actual context transmission tests
 - `SRC-TERMINAL-2a029d596d0708dcaf47ba4805ceb94925f15be9128474615c67b3e06ae8b6a6` — terminal-cli:CONTEXT-CONSISTENCY-20260927/2a029d596d0708dcaf47ba4805ceb94925f15be9128474615c67b3e06ae8b6a6
 - `S-STUDIO-MOTION-20260927` — Vendored studio motion
+- `SRC-TERMINAL-c5227df03d632d375a36849dc82f94df623da7e0826d0148845ce9d074c1656f` — terminal-cli:ux-connections-20260927/c5227df03d632d375a36849dc82f94df623da7e0826d0148845ce9d074c1656f
+- `SRC-EV-RUN-5e565ba474054c6cb6743495831d4679-starting` — local-run:5e565ba474054c6cb6743495831d4679
+- `SRC-EV-RUN-5e565ba474054c6cb6743495831d4679-running` — local-run:5e565ba474054c6cb6743495831d4679
+- `SRC-EV-RUN-5e565ba474054c6cb6743495831d4679-succeeded` — local-run:5e565ba474054c6cb6743495831d4679
+- `SRC-TERMINAL-8dd56a8978ba026706e927fb9cccbe391f68fa5c02cdd954b988fb5864710fa5` — terminal-cli:ux-connections-20260927/8dd56a8978ba026706e927fb9cccbe391f68fa5c02cdd954b988fb5864710fa5
 
 ## 11. Передача
 - Текущий чат: chat-current-project-history-agent
-- Следующий шаг: Проверить передачу связанной пары полных реальных архивов с эталоном требований и отмен; согласованная пагинация через MCP/CLI проверена на синтетических источниках. Автосбор и A6 открыты.
-- Обновлено: 2026-09-27T09:56:43.603500+00:00
+- Следующий шаг: Проверить интерфейс в доступном браузере: мобильный layout, клавиатура, контраст; затем спроектировать авторизованное подключение приватных репозиториев. A6 и непрерывный сбор чатов остаются открытыми.
+- Обновлено: 2026-09-27T10:23:55.100230+00:00
