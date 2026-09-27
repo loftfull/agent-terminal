@@ -209,6 +209,7 @@
 - 2026-09-24 · **reported** · restic/restic: researched
 - 2026-09-24 · **observed** · Actual FIX checkpoint restored into separate worktree. Code SHA and3changed component files match. Canonical history retained at original root; no app execution or real screenshot.
 - 2026-09-27 · **observed** · No Arena commits found on published refs. Added optional journal-tip guard and real subprocess synthetic transmission: 228 Python tests through terminal_runner and both JS suites PASS. Original archive completeness, continuous ingestion and A6 remain open.
+- 2026-09-27 · **observed** · Vendored MIT loading.css; fetch-gated motion and factual run cards. Five dashboard tests pass; browser localhost blocked, visual acceptance open.
 - unknown date · **observed** · Windows ran136 tests:3 assertions compared short8.3 paths with canonical paths. Expected paths corrected;30 affected local tests pass. Windows rerun pending. Journal-tail loss reproduced in diagnostic probe; cause remains unknown.
 - unknown date · **observed** · Integrated adapted MIT i-have-adhd focus and eventsourcing9.5.5 SQLite witness.190 local testsPASS,47 independent component checksPASS. Real18messages MCP preserved; controlledrollback rejected and recovered in newfolder. Natural loss cause and reappearinglock remain unknown. ACP/restic/Playwright evaluated, not connected.
 - unknown date · **observed** · Windows158tests found4cleanup errors: SQLite handle leaked by eventsourcing9.5.5 connection setup failure and test fixtures. Narrow local pool closes handle on setup error; fixtures explicitly close. New resource regression added;48 related local checksPASS. Windowsrerun pending; original journal rollback stillunknown.
@@ -366,8 +367,9 @@
 - `SRC-EV-RUN-120d1e4ee9e74daea4293931100c59fc-succeeded` — local-run:120d1e4ee9e74daea4293931100c59fc
 - `S-ARENA-REAUDIT-20260927` — Arena re-audit and actual context transmission tests
 - `SRC-TERMINAL-2a029d596d0708dcaf47ba4805ceb94925f15be9128474615c67b3e06ae8b6a6` — terminal-cli:CONTEXT-CONSISTENCY-20260927/2a029d596d0708dcaf47ba4805ceb94925f15be9128474615c67b3e06ae8b6a6
+- `S-STUDIO-MOTION-20260927` — Vendored studio motion
 
 ## 11. Передача
 - Текущий чат: chat-current-project-history-agent
 - Следующий шаг: Проверить передачу связанной пары полных реальных архивов с эталоном требований и отмен; согласованная пагинация через MCP/CLI проверена на синтетических источниках. Автосбор и A6 открыты.
-- Обновлено: 2026-09-27T09:22:41.656876+00:00
+- Обновлено: 2026-09-27T09:56:43.603500+00:00

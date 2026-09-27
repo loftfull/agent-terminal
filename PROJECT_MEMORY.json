@@ -3681,12 +3681,28 @@
         "task_id": "CONTEXT-CONSISTENCY-20260927"
       },
       "tool": "unknown"
+    },
+    {
+      "author": "unknown",
+      "dedupe_key": "15f2d74550842c8cf13d311fadcae940479fccccb3a3f7e9c74bf341488747bc",
+      "event_id": "EV-STUDIO-MOTION-20260927",
+      "event_type": "implementation",
+      "evidence_status": "observed",
+      "model_id": "unknown",
+      "observed_at": "2026-09-27T09:56:43.594913+00:00",
+      "occurred_at": "2026-09-27",
+      "session_id": null,
+      "source_ids": [
+        "S-STUDIO-MOTION-20260927"
+      ],
+      "summary": "Vendored MIT loading.css; fetch-gated motion and factual run cards. Five dashboard tests pass; browser localhost blocked, visual acceptance open.",
+      "tool": "unknown"
     }
   ],
   "handoff": {
     "current_chat_id": "chat-current-project-history-agent",
     "next_step": "Проверить передачу связанной пары полных реальных архивов с эталоном требований и отмен; согласованная пагинация через MCP/CLI проверена на синтетических источниках. Автосбор и A6 открыты.",
-    "updated_at": "2026-09-27T09:22:41.656876+00:00"
+    "updated_at": "2026-09-27T09:56:43.603500+00:00"
   },
   "locations": [
     {
@@ -6080,6 +6096,12 @@
       "locator": "terminal-cli:CONTEXT-CONSISTENCY-20260927/2a029d596d0708dcaf47ba4805ceb94925f15be9128474615c67b3e06ae8b6a6",
       "presence_status": "observed",
       "source_id": "SRC-TERMINAL-2a029d596d0708dcaf47ba4805ceb94925f15be9128474615c67b3e06ae8b6a6"
+    },
+    {
+      "kind": "implementation_report",
+      "locator": "docs/STUDIO_MOTION_2026-09-27.md",
+      "name": "Vendored studio motion",
+      "source_id": "S-STUDIO-MOTION-20260927"
     }
   ],
   "versions": [
