@@ -11,7 +11,7 @@
 - Project ID: `project-history-agent`
 - Каноническая версия: v0.8.1-candidate.1 + browser observation correction; continuous ingestion and A6 open
 - Текущий чат: chat-current-project-history-agent
-- Следующий проверяемый шаг: Реализовать явный импорт выбранного GitHub JSON в канонический журнал с project_id и provenance; локальный браузерный кэш уже доступен. Визуальная проверка и A6 открыты.
+- Следующий проверяемый шаг: Подключить первый реальный агентный backend через адаптер с project_id и проверяемыми результатами. Параллельно завершить явный импорт GitHub-наблюдений; визуальная приёмка и A6 остаются открытыми.
 - Правило продолжения: сначала прочитать этот отчёт и PROJECT_MEMORY.json; не повышать reported/planned до verified без новой проверки.
 
 ## CRITICAL_CONSTRAINTS — обязательные ограничения
@@ -62,6 +62,7 @@
 | Сообщения пользователя и переносимое избранное | partial | Сообщения пользователя и переносимое избранное — компонент | Просмотр сообщений и local-origin избранное с JSON импортом/экспортом; JS проверки и исторический preview подтверждены; нет облачной синхронизации |
 | Проверка всех планов и покрытия исходной истории | partial | — | — |
 | Наглядные планы, аудиты и динамика истории | partial | — | — |
+| Визуальный хаб проектирования и переноса контекста | partial | Визуальный хаб — каркас компонента | 6 рабочих областей, 14 представлений; Manrope и Lucide assets с лицензиями; Контекст выбранной задачи с guardrails и прямой supersedes-цепью; Исходники проверены; visual premium acceptance не выполнена |
 
 ## 4. Версии и фактические изменения
 ### v0.8.1-candidate.1 · 2026-09-24T09:07:00.573490+00:00 · observed
@@ -122,6 +123,11 @@
 ### Focus and persistence witness (development checkpoint) · 2026-09-24 · observed
 - Adapted presentation ideas, full-data preservation
 - eventsourcing9.5.5 witness and isolated recovery; original rollback cause unknown
+### Визуальный хаб — каркас компонента · 2026-09-28 · observed
+- 6 рабочих областей, 14 представлений
+- Manrope и Lucide assets с лицензиями
+- Контекст выбранной задачи с guardrails и прямой supersedes-цепью
+- Исходники проверены; visual premium acceptance не выполнена
 
 ## 5. Скриншоты и визуальные подтверждения
 - `VIS-v0.8.1-candidate.1-d62b38fb3a48d1a7983c701132c2cd25b1f5afe0da5380936991a17d0e13c7e2` · Screenshot for v0.8.1-candidate.1 · version=v0.8.1-candidate.1 · status=file_observed_build_link_reported — `/workspace/scratch/c911ac0d5396/repos/FIX/version-images/d62b38fb3a48d1a7983c701132c2cd25b1f5afe0da5380936991a17d0e13c7e2.jpg`
@@ -196,6 +202,11 @@
 - 2026-09-27T13:45:27.172867+00:00 · **observed** · Local run running
 - 2026-09-27T13:45:27.277808+00:00 · **observed** · Local run succeeded
 - 2026-09-27T13:45:27.408463+00:00 · **reported** · Сохранение repo/date, повторное открытие, безопасный отказ при quota/corruption и scoped transfer. Node/DOM/Python PASS; browser visual QA open.
+- 2026-09-28T09:06:13.565512+00:00 · **reported** · Каркас визуального Agent Terminal
+- 2026-09-28T09:06:13.780293+00:00 · **observed** · Local run starting
+- 2026-09-28T09:06:13.885667+00:00 · **observed** · Local run running
+- 2026-09-28T09:06:13.999340+00:00 · **observed** · Local run succeeded
+- 2026-09-28T09:06:14.137375+00:00 · **reported** · Новый hub shell и 6 рабочих областей; 228 Python tests и DOM/Node PASS. Независимый source review: 4 findings resolved. Visual premium acceptance remains open.
 - 2026-09-15 · **verified** · Project History Agent originated in ChatGPT chat агент.
 - 2026-09-15 · **verified** · Current chat explicitly requested continuation from chat агент.
 - 2026-09-16 · **verified** · v0.5 durable history package passed its deterministic and real-project candidate gates; A6 remained NOT_RUN.
@@ -410,8 +421,14 @@
 - `SRC-EV-RUN-aa921d7b9d704f6e8e587fa191970195-running` — local-run:aa921d7b9d704f6e8e587fa191970195
 - `SRC-EV-RUN-aa921d7b9d704f6e8e587fa191970195-succeeded` — local-run:aa921d7b9d704f6e8e587fa191970195
 - `SRC-TERMINAL-b3344c445aac0fdb947f3cc9d77b783d9aa2ca19248289111ecaafe484552fd6` — terminal-cli:repo-snapshots-20260927/b3344c445aac0fdb947f3cc9d77b783d9aa2ca19248289111ecaafe484552fd6
+- `SRC-TERMINAL-620c0f7cbf3f15bc3973581b5cae45951e812c10bd6ca334bc7ed7d5a8379f50` — terminal-cli:hub-shell-20260928/620c0f7cbf3f15bc3973581b5cae45951e812c10bd6ca334bc7ed7d5a8379f50
+- `SRC-EV-RUN-46cec11135d1443382c937566d044ae4-starting` — local-run:46cec11135d1443382c937566d044ae4
+- `SRC-EV-RUN-46cec11135d1443382c937566d044ae4-running` — local-run:46cec11135d1443382c937566d044ae4
+- `SRC-EV-RUN-46cec11135d1443382c937566d044ae4-succeeded` — local-run:46cec11135d1443382c937566d044ae4
+- `SRC-TERMINAL-0048928b772276499f749cf7c9c3535c89d2d4e3e90cd4bdab07e4da61828d87` — terminal-cli:hub-shell-20260928/0048928b772276499f749cf7c9c3535c89d2d4e3e90cd4bdab07e4da61828d87
+- `SRC-HUB-SHELL-20260928` — docs/HUB_ARCHITECTURE_2026-09-28.md
 
 ## 11. Передача
 - Текущий чат: chat-current-project-history-agent
-- Следующий шаг: Реализовать явный импорт выбранного GitHub JSON в канонический журнал с project_id и provenance; локальный браузерный кэш уже доступен. Визуальная проверка и A6 открыты.
-- Обновлено: 2026-09-27T13:45:27.544703+00:00
+- Следующий шаг: Подключить первый реальный агентный backend через адаптер с project_id и проверяемыми результатами. Параллельно завершить явный импорт GitHub-наблюдений; визуальная приёмка и A6 остаются открытыми.
+- Обновлено: 2026-09-28T09:06:14.280656+00:00

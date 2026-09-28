@@ -4531,12 +4531,216 @@
         "task_id": "repo-snapshots-20260927"
       },
       "tool": "unknown"
+    },
+    {
+      "author": "contract submitter",
+      "dedupe_key": "6a38938bb889710ba2a339004e93d90a89ee1b9946727896ad60fda7d9773dba",
+      "event_id": "EV-TERMINAL-620c0f7cbf3f15bc3973581b5cae45951e812c10bd6ca334bc7ed7d5a8379f50",
+      "event_type": "terminal_contract",
+      "evidence_status": "reported",
+      "model_id": "unknown",
+      "observed_at": "2026-09-28T09:06:13.592503+00:00",
+      "occurred_at": "2026-09-28T09:06:13.565512+00:00",
+      "session_id": "unknown",
+      "source_ids": [
+        "SRC-TERMINAL-620c0f7cbf3f15bc3973581b5cae45951e812c10bd6ca334bc7ed7d5a8379f50"
+      ],
+      "summary": "Каркас визуального Agent Terminal",
+      "terminal_payload": {
+        "acceptance": [
+          "14 routes reachable",
+          "Critical guards preserved",
+          "No lost focus on unchanged polling",
+          "Browser visual review"
+        ],
+        "constraints": [
+          {
+            "reason": "Проверяемое отображение источников",
+            "rule": "Не выдумывать активность, приёмку, стоимость и полноту контекста"
+          }
+        ],
+        "deliverables": [
+          "6 рабочих областей / 14 представлений",
+          "Scoped context compiler",
+          "Архитектура адаптеров и дизайн-система"
+        ],
+        "max_continuations": 1,
+        "purpose": "Панорама, этапы, версия и передача контекста вместо текстовой сводки",
+        "stop_conditions": [
+          "Недоступна browser visual acceptance"
+        ],
+        "task_id": "hub-shell-20260928",
+        "title": "Каркас визуального Agent Terminal"
+      },
+      "tool": "unknown"
+    },
+    {
+      "author": "local command supervisor",
+      "dedupe_key": "775f8061825622df066b3f3a25f325e5341fead144f31ff6fba5b98f308814cd",
+      "event_id": "EV-RUN-46cec11135d1443382c937566d044ae4-starting",
+      "event_type": "terminal_run",
+      "evidence_status": "observed",
+      "model_id": "unknown",
+      "observed_at": "2026-09-28T09:06:13.802362+00:00",
+      "occurred_at": "2026-09-28T09:06:13.780293+00:00",
+      "runner_payload": {
+        "accepted": false,
+        "argv": [
+          "node",
+          "tests/test_hub_model.cjs"
+        ],
+        "attribution_status": "reported",
+        "continuation_count": 0,
+        "cwd": "/workspace/scratch/c911ac0d5396/repos/FIX",
+        "ended_at": null,
+        "exit_code": null,
+        "model_id": "unknown",
+        "output_limit_per_stream_bytes": 65536,
+        "process_id": null,
+        "project_id": "project-history-agent",
+        "run_id": "46cec11135d1443382c937566d044ae4",
+        "runner_pid": 7,
+        "session_id": "hub-shell-20260928",
+        "started_at": "2026-09-28T09:06:13.753341+00:00",
+        "status": "starting",
+        "task_id": "hub-shell-20260928",
+        "timeout_seconds": 60
+      },
+      "session_id": "hub-shell-20260928",
+      "source_ids": [
+        "SRC-EV-RUN-46cec11135d1443382c937566d044ae4-starting"
+      ],
+      "summary": "Local run starting",
+      "tool": "unknown"
+    },
+    {
+      "author": "local command supervisor",
+      "dedupe_key": "337bea7fccb8b30ea01d0b1b46c00a316c9772e94e681b0e03b63af37cdc6622",
+      "event_id": "EV-RUN-46cec11135d1443382c937566d044ae4-running",
+      "event_type": "terminal_run",
+      "evidence_status": "observed",
+      "model_id": "unknown",
+      "observed_at": "2026-09-28T09:06:13.910614+00:00",
+      "occurred_at": "2026-09-28T09:06:13.885667+00:00",
+      "runner_payload": {
+        "accepted": false,
+        "argv": [
+          "node",
+          "tests/test_hub_model.cjs"
+        ],
+        "attribution_status": "reported",
+        "continuation_count": 0,
+        "cwd": "/workspace/scratch/c911ac0d5396/repos/FIX",
+        "ended_at": null,
+        "exit_code": null,
+        "model_id": "unknown",
+        "output_limit_per_stream_bytes": 65536,
+        "process_id": 8,
+        "project_id": "project-history-agent",
+        "run_id": "46cec11135d1443382c937566d044ae4",
+        "runner_pid": 7,
+        "session_id": "hub-shell-20260928",
+        "start_event_id": "EV-RUN-46cec11135d1443382c937566d044ae4-starting",
+        "started_at": "2026-09-28T09:06:13.753341+00:00",
+        "status": "running",
+        "task_id": "hub-shell-20260928",
+        "timeout_seconds": 60
+      },
+      "session_id": "hub-shell-20260928",
+      "source_ids": [
+        "SRC-EV-RUN-46cec11135d1443382c937566d044ae4-running"
+      ],
+      "summary": "Local run running",
+      "tool": "unknown"
+    },
+    {
+      "author": "local command supervisor",
+      "dedupe_key": "296b1e3d5598cc5d824430be88cc98dfca3cf2b3ee486b963cf328ed294284b0",
+      "event_id": "EV-RUN-46cec11135d1443382c937566d044ae4-succeeded",
+      "event_type": "terminal_run",
+      "evidence_status": "observed",
+      "model_id": "unknown",
+      "observed_at": "2026-09-28T09:06:14.025951+00:00",
+      "occurred_at": "2026-09-28T09:06:13.999340+00:00",
+      "runner_payload": {
+        "accepted": false,
+        "argv": [
+          "node",
+          "tests/test_hub_model.cjs"
+        ],
+        "attribution_status": "reported",
+        "continuation_count": 0,
+        "cwd": "/workspace/scratch/c911ac0d5396/repos/FIX",
+        "ended_at": "2026-09-28T09:06:13.972229+00:00",
+        "exit_code": 0,
+        "model_id": "unknown",
+        "output_limit_per_stream_bytes": 65536,
+        "process_id": 8,
+        "project_id": "project-history-agent",
+        "run_id": "46cec11135d1443382c937566d044ae4",
+        "runner_pid": 7,
+        "session_id": "hub-shell-20260928",
+        "start_event_id": "EV-RUN-46cec11135d1443382c937566d044ae4-starting",
+        "started_at": "2026-09-28T09:06:13.753341+00:00",
+        "status": "succeeded",
+        "stderr": {
+          "bytes_seen": 0,
+          "capture_error": null,
+          "text": "",
+          "truncated": false
+        },
+        "stdout": {
+          "bytes_seen": 92,
+          "capture_error": null,
+          "text": "PASS: context guards, conflicts, supersession, scope, omission, unchanged polling signature\n",
+          "truncated": false
+        },
+        "task_id": "hub-shell-20260928",
+        "timeout_seconds": 60
+      },
+      "session_id": "hub-shell-20260928",
+      "source_ids": [
+        "SRC-EV-RUN-46cec11135d1443382c937566d044ae4-succeeded"
+      ],
+      "summary": "Local run succeeded",
+      "tool": "unknown"
+    },
+    {
+      "author": "reported executor",
+      "dedupe_key": "94e7c58a6a4e3aa8a48dfeb9634dade1a66757c096e985d74d9a405cf64617b8",
+      "event_id": "EV-TERMINAL-0048928b772276499f749cf7c9c3535c89d2d4e3e90cd4bdab07e4da61828d87",
+      "event_type": "terminal_report",
+      "evidence_status": "reported",
+      "model_id": "unknown",
+      "observed_at": "2026-09-28T09:06:14.161111+00:00",
+      "occurred_at": "2026-09-28T09:06:14.137375+00:00",
+      "session_id": "unknown",
+      "source_ids": [
+        "SRC-TERMINAL-0048928b772276499f749cf7c9c3535c89d2d4e3e90cd4bdab07e4da61828d87"
+      ],
+      "summary": "Новый hub shell и 6 рабочих областей; 228 Python tests и DOM/Node PASS. Независимый source review: 4 findings resolved. Visual premium acceptance remains open.",
+      "terminal_payload": {
+        "acceptance_results": [],
+        "blockers": [
+          "Browser visual acceptance NOT_EVALUATED"
+        ],
+        "continuation_count": 0,
+        "evidence_event_ids": [
+          "EV-RUN-46cec11135d1443382c937566d044ae4-succeeded"
+        ],
+        "model_id": "unknown",
+        "session_id": "unknown",
+        "status": "review",
+        "summary": "Новый hub shell и 6 рабочих областей; 228 Python tests и DOM/Node PASS. Независимый source review: 4 findings resolved. Visual premium acceptance remains open.",
+        "task_id": "hub-shell-20260928"
+      },
+      "tool": "unknown"
     }
   ],
   "handoff": {
     "current_chat_id": "chat-current-project-history-agent",
-    "next_step": "Реализовать явный импорт выбранного GitHub JSON в канонический журнал с project_id и provenance; локальный браузерный кэш уже доступен. Визуальная проверка и A6 открыты.",
-    "updated_at": "2026-09-27T13:45:27.544703+00:00"
+    "next_step": "Подключить первый реальный агентный backend через адаптер с project_id и проверяемыми результатами. Параллельно завершить явный импорт GitHub-наблюдений; визуальная приёмка и A6 остаются открытыми.",
+    "updated_at": "2026-09-28T09:06:14.280656+00:00"
   },
   "locations": [
     {
@@ -4892,6 +5096,20 @@
       ],
       "status": "partial",
       "title": "Наглядные планы, аудиты и динамика истории"
+    },
+    {
+      "items": [
+        "Общая навигация и read-model: реализованы",
+        "Scoped handoff + full JSON: реализованы",
+        "Apply/import gateway и реальный provider pilot: следующие этапы",
+        "Native visual acceptance и A6: открыты"
+      ],
+      "plan_id": "P-HUB-ARCHITECTURE",
+      "source_ids": [
+        "SRC-HUB-SHELL-20260928"
+      ],
+      "status": "partial",
+      "title": "Визуальный хаб проектирования и переноса контекста"
     }
   ],
   "project": {
@@ -7566,6 +7784,172 @@
       "locator": "terminal-cli:repo-snapshots-20260927/b3344c445aac0fdb947f3cc9d77b783d9aa2ca19248289111ecaafe484552fd6",
       "presence_status": "observed",
       "source_id": "SRC-TERMINAL-b3344c445aac0fdb947f3cc9d77b783d9aa2ca19248289111ecaafe484552fd6"
+    },
+    {
+      "content_status": "reported",
+      "input": {
+        "acceptance": [
+          "14 routes reachable",
+          "Critical guards preserved",
+          "No lost focus on unchanged polling",
+          "Browser visual review"
+        ],
+        "constraints": [
+          {
+            "reason": "Проверяемое отображение источников",
+            "rule": "Не выдумывать активность, приёмку, стоимость и полноту контекста"
+          }
+        ],
+        "deliverables": [
+          "6 рабочих областей / 14 представлений",
+          "Scoped context compiler",
+          "Архитектура адаптеров и дизайн-система"
+        ],
+        "max_continuations": 1,
+        "purpose": "Панорама, этапы, версия и передача контекста вместо текстовой сводки",
+        "stop_conditions": [
+          "Недоступна browser visual acceptance"
+        ],
+        "task_id": "hub-shell-20260928",
+        "title": "Каркас визуального Agent Terminal"
+      },
+      "kind": "terminal_cli",
+      "locator": "terminal-cli:hub-shell-20260928/620c0f7cbf3f15bc3973581b5cae45951e812c10bd6ca334bc7ed7d5a8379f50",
+      "presence_status": "observed",
+      "source_id": "SRC-TERMINAL-620c0f7cbf3f15bc3973581b5cae45951e812c10bd6ca334bc7ed7d5a8379f50"
+    },
+    {
+      "content_status": "observed",
+      "input": {
+        "accepted": false,
+        "argv": [
+          "node",
+          "tests/test_hub_model.cjs"
+        ],
+        "attribution_status": "reported",
+        "continuation_count": 0,
+        "cwd": "/workspace/scratch/c911ac0d5396/repos/FIX",
+        "ended_at": null,
+        "exit_code": null,
+        "model_id": "unknown",
+        "output_limit_per_stream_bytes": 65536,
+        "process_id": null,
+        "project_id": "project-history-agent",
+        "run_id": "46cec11135d1443382c937566d044ae4",
+        "runner_pid": 7,
+        "session_id": "hub-shell-20260928",
+        "started_at": "2026-09-28T09:06:13.753341+00:00",
+        "status": "starting",
+        "task_id": "hub-shell-20260928",
+        "timeout_seconds": 60
+      },
+      "kind": "local_process",
+      "locator": "local-run:46cec11135d1443382c937566d044ae4",
+      "presence_status": "observed",
+      "source_id": "SRC-EV-RUN-46cec11135d1443382c937566d044ae4-starting"
+    },
+    {
+      "content_status": "observed",
+      "input": {
+        "accepted": false,
+        "argv": [
+          "node",
+          "tests/test_hub_model.cjs"
+        ],
+        "attribution_status": "reported",
+        "continuation_count": 0,
+        "cwd": "/workspace/scratch/c911ac0d5396/repos/FIX",
+        "ended_at": null,
+        "exit_code": null,
+        "model_id": "unknown",
+        "output_limit_per_stream_bytes": 65536,
+        "process_id": 8,
+        "project_id": "project-history-agent",
+        "run_id": "46cec11135d1443382c937566d044ae4",
+        "runner_pid": 7,
+        "session_id": "hub-shell-20260928",
+        "start_event_id": "EV-RUN-46cec11135d1443382c937566d044ae4-starting",
+        "started_at": "2026-09-28T09:06:13.753341+00:00",
+        "status": "running",
+        "task_id": "hub-shell-20260928",
+        "timeout_seconds": 60
+      },
+      "kind": "local_process",
+      "locator": "local-run:46cec11135d1443382c937566d044ae4",
+      "presence_status": "observed",
+      "source_id": "SRC-EV-RUN-46cec11135d1443382c937566d044ae4-running"
+    },
+    {
+      "content_status": "observed",
+      "input": {
+        "accepted": false,
+        "argv": [
+          "node",
+          "tests/test_hub_model.cjs"
+        ],
+        "attribution_status": "reported",
+        "continuation_count": 0,
+        "cwd": "/workspace/scratch/c911ac0d5396/repos/FIX",
+        "ended_at": "2026-09-28T09:06:13.972229+00:00",
+        "exit_code": 0,
+        "model_id": "unknown",
+        "output_limit_per_stream_bytes": 65536,
+        "process_id": 8,
+        "project_id": "project-history-agent",
+        "run_id": "46cec11135d1443382c937566d044ae4",
+        "runner_pid": 7,
+        "session_id": "hub-shell-20260928",
+        "start_event_id": "EV-RUN-46cec11135d1443382c937566d044ae4-starting",
+        "started_at": "2026-09-28T09:06:13.753341+00:00",
+        "status": "succeeded",
+        "stderr": {
+          "bytes_seen": 0,
+          "capture_error": null,
+          "text": "",
+          "truncated": false
+        },
+        "stdout": {
+          "bytes_seen": 92,
+          "capture_error": null,
+          "text": "PASS: context guards, conflicts, supersession, scope, omission, unchanged polling signature\n",
+          "truncated": false
+        },
+        "task_id": "hub-shell-20260928",
+        "timeout_seconds": 60
+      },
+      "kind": "local_process",
+      "locator": "local-run:46cec11135d1443382c937566d044ae4",
+      "presence_status": "observed",
+      "source_id": "SRC-EV-RUN-46cec11135d1443382c937566d044ae4-succeeded"
+    },
+    {
+      "content_status": "reported",
+      "input": {
+        "acceptance_results": [],
+        "blockers": [
+          "Browser visual acceptance NOT_EVALUATED"
+        ],
+        "continuation_count": 0,
+        "evidence_event_ids": [
+          "EV-RUN-46cec11135d1443382c937566d044ae4-succeeded"
+        ],
+        "model_id": "unknown",
+        "session_id": "unknown",
+        "status": "review",
+        "summary": "Новый hub shell и 6 рабочих областей; 228 Python tests и DOM/Node PASS. Независимый source review: 4 findings resolved. Visual premium acceptance remains open.",
+        "task_id": "hub-shell-20260928"
+      },
+      "kind": "terminal_cli",
+      "locator": "terminal-cli:hub-shell-20260928/0048928b772276499f749cf7c9c3535c89d2d4e3e90cd4bdab07e4da61828d87",
+      "presence_status": "observed",
+      "source_id": "SRC-TERMINAL-0048928b772276499f749cf7c9c3535c89d2d4e3e90cd4bdab07e4da61828d87"
+    },
+    {
+      "content_status": "reported",
+      "kind": "local_document",
+      "locator": "docs/HUB_ARCHITECTURE_2026-09-28.md",
+      "presence_status": "observed",
+      "source_id": "SRC-HUB-SHELL-20260928"
     }
   ],
   "versions": [
@@ -7830,6 +8214,24 @@
         "S-PLAN-COVERAGE-20260924"
       ],
       "version_id": "V-DEV-MESSAGE-LIBRARY"
+    },
+    {
+      "changes": [
+        "6 рабочих областей, 14 представлений",
+        "Manrope и Lucide assets с лицензиями",
+        "Контекст выбранной задачи с guardrails и прямой supersedes-цепью",
+        "Исходники проверены; visual premium acceptance не выполнена"
+      ],
+      "evidence_status": "observed",
+      "name": "Визуальный хаб — каркас компонента",
+      "occurred_at": "2026-09-28",
+      "plan_ids": [
+        "P-HUB-ARCHITECTURE"
+      ],
+      "source_ids": [
+        "SRC-HUB-SHELL-20260928"
+      ],
+      "version_id": "V-HUB-SHELL-COMPONENT"
     }
   ],
   "visuals": [

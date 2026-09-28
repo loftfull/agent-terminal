@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:agent-terminal:adapter-observation:v1",
+  "title": "Future adapter boundary — contract, not an installed connector",
+  "type": "object",
+  "required": ["schema", "adapter_id", "project_id", "source_uri", "observed_at", "evidence_status", "coverage", "payload"],
+  "properties": {
+    "schema": {"const": "hub-adapter-observation/v1"},
+    "adapter_id": {"type": "string", "minLength": 1},
+    "project_id": {"type": "string", "minLength": 1},
+    "source_uri": {"type": "string", "minLength": 1},
+    "source_revision": {"type": ["string", "null"]},
+    "observed_at": {"type": "string", "format": "date-time"},
+    "evidence_status": {"enum": ["requested", "planned", "reported", "observed", "verified", "inferred", "unknown"]},
+    "coverage": {"type": "object", "required": ["complete", "omissions"], "properties": {"complete": {"type": "boolean"}, "omissions": {"type": "array", "items": {"type": "string"}}}},
+    "payload": {"type": "object"}
+  },
+  "additionalProperties": false
+}

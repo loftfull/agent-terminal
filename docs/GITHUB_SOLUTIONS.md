@@ -230,3 +230,25 @@ LICENSE Apache-2.0 и docs/api.md. Подход: отдельное именов
 не canonical journal и не синхронизация устройств; JSON export остаётся доступным.
 Приёмка: повторное открытие, несколько repo, дедупликация, отказ повреждённого
 пакета/несовпадающей идентичности, quota failure без потери старого снимка.
+
+## 2026-09-28 — каркас визуального хаба
+
+Запросы: `site:github.com xyflow xyflow workflow editor MIT`,
+`site:github.com lucide-icons lucide ISC license`. React Flow изучен как кандидат
+для будущего редактируемого workflow canvas; текущие 5 этапов являются навигацией,
+а не графом зависимостей, поэтому React/Svelte runtime не добавлен. SHA для него
+не закреплён и код не переносился. Предыдущие Langfuse/Agent Chat UI исследования
+переиспользованы; продукты помечены как внешние, а не как установленные адаптеры.
+
+Lucide Icons revision 66d8f9fc394b8530377e5f6112f0b8908ba01280: 8 SVG, LICENSE
+(ISC и применимые Feather/MIT notices) сохранены в web/vendor/hub-icons.
+Google Fonts revision 23e54b51ddffbc7713c583748e3bd86f62b1fa4a: Manrope variable
+TTF преобразован без изменения шрифта в base64 для автономного HTML; OFL.txt и
+SOURCE.md сохранены в web/vendor/hub-font. Пользователь просит русскую премиальную
+типографику и единый каркас. Шрифт не загружается из стороннего CDN.
+
+Новые hub_model/hub_ui используют существующее ядро вместо новой базы данных.
+Проверки: все маршруты доступны, полные guardrails сохранены в compact package,
+неизменившийся polling не сбивает экран. Цены/экономия не выдумываются.
+Цена: увеличенный размер standalone HTML из-за embedded font; visually measured
+performance и premium acceptance не заявлены. См. HUB_ARCHITECTURE_2026-09-28.md.
