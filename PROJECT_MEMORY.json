@@ -4735,12 +4735,242 @@
         "task_id": "hub-shell-20260928"
       },
       "tool": "unknown"
+    },
+    {
+      "author": "contract submitter",
+      "dedupe_key": "f27e65aaa9df9645c598003e0223e0e67e844919095dc3ed9e8b1db9b1b55671",
+      "event_id": "EV-TERMINAL-8ede26490fe8d61ed82d6194b030b1cc3fe6551faad8df638f300ae7eef1ea6a",
+      "event_type": "terminal_contract",
+      "evidence_status": "reported",
+      "model_id": "unknown",
+      "observed_at": "2026-09-28T10:31:05.820511+00:00",
+      "occurred_at": "2026-09-28T10:31:05.792246+00:00",
+      "session_id": "unknown",
+      "source_ids": [
+        "SRC-TERMINAL-8ede26490fe8d61ed82d6194b030b1cc3fe6551faad8df638f300ae7eef1ea6a"
+      ],
+      "summary": "Независимый глубокий аудит приложения",
+      "terminal_payload": {
+        "acceptance": [
+          "Каждый подтверждённый дефект имеет кодовую ссылку или воспроизведение",
+          "Риски отделены от дефектов и отсутствующего функционала",
+          "Аналоги проверены по первичным источникам"
+        ],
+        "constraints": [
+          {
+            "reason": "Сохранить воспроизводимый baseline и независимость результатов",
+            "rule": "Не изменять рабочую логику в ходе аудита"
+          }
+        ],
+        "deliverables": [
+          "Отчёт независимых экспертов с воспроизведениями",
+          "Матрица интеграций и план исправлений"
+        ],
+        "max_continuations": 2,
+        "purpose": "Проверить реальную работоспособность, ошибки и целесообразность разработки относительно готовых решений",
+        "stop_conditions": [
+          "Недоступные исходники и окружения помечать непроверенными"
+        ],
+        "task_id": "independent-deep-audit-20260928",
+        "title": "Независимый глубокий аудит приложения"
+      },
+      "tool": "unknown"
+    },
+    {
+      "author": "local command supervisor",
+      "dedupe_key": "cb085d9203463d067c91e71591de288db2910293c51e18061dcb5cbf2a79464c",
+      "event_id": "EV-RUN-2299bc6aed6f4d5b95b22bbcba904a1d-starting",
+      "event_type": "terminal_run",
+      "evidence_status": "observed",
+      "model_id": "unknown",
+      "observed_at": "2026-09-28T10:31:06.060905+00:00",
+      "occurred_at": "2026-09-28T10:31:06.032758+00:00",
+      "runner_payload": {
+        "accepted": false,
+        "argv": [
+          "/tmp/agent-terminal-audit-venv/bin/python",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "tests",
+          "-q"
+        ],
+        "attribution_status": "reported",
+        "continuation_count": 0,
+        "cwd": "/workspace/scratch/c911ac0d5396/repos/FIX",
+        "ended_at": null,
+        "exit_code": null,
+        "model_id": "unknown",
+        "output_limit_per_stream_bytes": 8192,
+        "process_id": null,
+        "project_id": "project-history-agent",
+        "run_id": "2299bc6aed6f4d5b95b22bbcba904a1d",
+        "runner_pid": 5,
+        "session_id": "unknown",
+        "started_at": "2026-09-28T10:31:06.002990+00:00",
+        "status": "starting",
+        "task_id": "independent-deep-audit-20260928",
+        "timeout_seconds": 180
+      },
+      "session_id": "unknown",
+      "source_ids": [
+        "SRC-EV-RUN-2299bc6aed6f4d5b95b22bbcba904a1d-starting"
+      ],
+      "summary": "Local run starting",
+      "tool": "unknown"
+    },
+    {
+      "author": "local command supervisor",
+      "dedupe_key": "86ed4cb5f97551d2e7b9ff2a4f97fd905da4d42852e0bd8084bef065987d47cd",
+      "event_id": "EV-RUN-2299bc6aed6f4d5b95b22bbcba904a1d-running",
+      "event_type": "terminal_run",
+      "evidence_status": "observed",
+      "model_id": "unknown",
+      "observed_at": "2026-09-28T10:31:06.201458+00:00",
+      "occurred_at": "2026-09-28T10:31:06.165447+00:00",
+      "runner_payload": {
+        "accepted": false,
+        "argv": [
+          "/tmp/agent-terminal-audit-venv/bin/python",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "tests",
+          "-q"
+        ],
+        "attribution_status": "reported",
+        "continuation_count": 0,
+        "cwd": "/workspace/scratch/c911ac0d5396/repos/FIX",
+        "ended_at": null,
+        "exit_code": null,
+        "model_id": "unknown",
+        "output_limit_per_stream_bytes": 8192,
+        "process_id": 6,
+        "project_id": "project-history-agent",
+        "run_id": "2299bc6aed6f4d5b95b22bbcba904a1d",
+        "runner_pid": 5,
+        "session_id": "unknown",
+        "start_event_id": "EV-RUN-2299bc6aed6f4d5b95b22bbcba904a1d-starting",
+        "started_at": "2026-09-28T10:31:06.002990+00:00",
+        "status": "running",
+        "task_id": "independent-deep-audit-20260928",
+        "timeout_seconds": 180
+      },
+      "session_id": "unknown",
+      "source_ids": [
+        "SRC-EV-RUN-2299bc6aed6f4d5b95b22bbcba904a1d-running"
+      ],
+      "summary": "Local run running",
+      "tool": "unknown"
+    },
+    {
+      "author": "local command supervisor",
+      "dedupe_key": "7cd60b8fafb6a745c24ea2f55a4830a4d313a983ef5b3ea37263bcc3bd70785e",
+      "event_id": "EV-RUN-2299bc6aed6f4d5b95b22bbcba904a1d-succeeded",
+      "event_type": "terminal_run",
+      "evidence_status": "observed",
+      "model_id": "unknown",
+      "observed_at": "2026-09-28T10:31:18.129525+00:00",
+      "occurred_at": "2026-09-28T10:31:18.102424+00:00",
+      "runner_payload": {
+        "accepted": false,
+        "argv": [
+          "/tmp/agent-terminal-audit-venv/bin/python",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "tests",
+          "-q"
+        ],
+        "attribution_status": "reported",
+        "continuation_count": 0,
+        "cwd": "/workspace/scratch/c911ac0d5396/repos/FIX",
+        "ended_at": "2026-09-28T10:31:18.071082+00:00",
+        "exit_code": 0,
+        "model_id": "unknown",
+        "output_limit_per_stream_bytes": 8192,
+        "process_id": 6,
+        "project_id": "project-history-agent",
+        "run_id": "2299bc6aed6f4d5b95b22bbcba904a1d",
+        "runner_pid": 5,
+        "session_id": "unknown",
+        "start_event_id": "EV-RUN-2299bc6aed6f4d5b95b22bbcba904a1d-starting",
+        "started_at": "2026-09-28T10:31:06.002990+00:00",
+        "status": "succeeded",
+        "stderr": {
+          "bytes_seen": 565,
+          "capture_error": null,
+          "text": "Executing <Task pending name='Task-2' coro=<ProtocolTests.test_real_stdio_client_retrieves_existing_FIX_journal() running at /workspace/scratch/c911ac0d5396/repos/FIX/tests/test_mcp_bridge.py:108> cb=[_run_until_complete_cb() at /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:181] created at /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py:100> took 0.485 seconds\n----------------------------------------------------------------------\nRan 228 tests in 11.643s\n\nOK\n",
+          "truncated": false
+        },
+        "stdout": {
+          "bytes_seen": 369,
+          "capture_error": null,
+          "text": "{\"mcp_transmission_audit\": {\"status\": \"PASS\", \"fixture\": \"synthetic\", \"transport\": \"real stdio subprocess\", \"checks\": [\"ids\", \"full L2 payloads\", \"constraints\", \"sources\", \"supersession\", \"receipt hashes\", \"repeat import\", \"state change\", \"project scope\"], \"omissions\": [\"Original account archives not supplied\", \"Continuous ingestion not tested\", \"A6 remains open\"]}}\n",
+          "truncated": false
+        },
+        "task_id": "independent-deep-audit-20260928",
+        "timeout_seconds": 180
+      },
+      "session_id": "unknown",
+      "source_ids": [
+        "SRC-EV-RUN-2299bc6aed6f4d5b95b22bbcba904a1d-succeeded"
+      ],
+      "summary": "Local run succeeded",
+      "tool": "unknown"
+    },
+    {
+      "author": "reported executor",
+      "dedupe_key": "27b24246d10d5a21de493291af6c20d3bf59e66c7f345f9f837f467bc6879f41",
+      "event_id": "EV-TERMINAL-b1cea0f685377a1aecb69c01291a54edb7948b24b899a854c7bd9bedcb58133c",
+      "event_type": "terminal_report",
+      "evidence_status": "reported",
+      "model_id": "unknown",
+      "observed_at": "2026-09-28T10:34:59.447590+00:00",
+      "occurred_at": "2026-09-28T10:34:59.423521+00:00",
+      "session_id": "unknown",
+      "source_ids": [
+        "SRC-TERMINAL-b1cea0f685377a1aecb69c01291a54edb7948b24b899a854c7bd9bedcb58133c"
+      ],
+      "summary": "Три независимых агента: подтверждены дедупликация с выпадением событий из replay, доменная валидация и разрывы контекста;228 tests PASS не покрывают эти случаи. Отчёт docs/INDEPENDENT_DEEP_AUDIT_2026-09-28.md. A6 открыт.",
+      "terminal_payload": {
+        "acceptance_results": [],
+        "blockers": [],
+        "continuation_count": 0,
+        "evidence_event_ids": [
+          "EV-RUN-2299bc6aed6f4d5b95b22bbcba904a1d-succeeded"
+        ],
+        "model_id": "unknown",
+        "session_id": "unknown",
+        "status": "review",
+        "summary": "Три независимых агента: подтверждены дедупликация с выпадением событий из replay, доменная валидация и разрывы контекста;228 tests PASS не покрывают эти случаи. Отчёт docs/INDEPENDENT_DEEP_AUDIT_2026-09-28.md. A6 открыт.",
+        "task_id": "independent-deep-audit-20260928"
+      },
+      "tool": "unknown"
+    },
+    {
+      "author": "unknown",
+      "dedupe_key": "27aa5ba222eb1f59ce889c5f172e12d072daad0427a5c376814bda33f8420932",
+      "event_id": "EV-INDEPENDENT-DEEP-AUDIT-20260928",
+      "event_type": "audit",
+      "evidence_status": "observed",
+      "model_id": "unknown",
+      "observed_at": "2026-09-28T10:34:59.566859+00:00",
+      "session_id": null,
+      "source_ids": [
+        "SRC-INDEPENDENT-DEEP-AUDIT-20260928"
+      ],
+      "summary": "Независимый аудит baseline d8bdd07: синтетические probes подтвердили replay dedupe collision, malformed reserved event, L1 supersedes omission;14/14 опубликованных task packs без contract/report events. Код не исправлялся. Полная готовность не достигнута.",
+      "tool": "unknown"
     }
   ],
   "handoff": {
     "current_chat_id": "chat-current-project-history-agent",
-    "next_step": "Подключить первый реальный агентный backend через адаптер с project_id и проверяемыми результатами. Параллельно завершить явный импорт GitHub-наблюдений; визуальная приёмка и A6 остаются открытыми.",
-    "updated_at": "2026-09-28T09:06:14.280656+00:00"
+    "next_step": "Исправить D1-D4 из INDEPENDENT_DEEP_AUDIT_2026-09-28: dedupe без потери различий и с совместимым replay, доменная валидация writer, замкнутый контекст, supersedes в L1. Затем gateway/приёмка, потом внешний executor. A6 и visual acceptance открыты.",
+    "updated_at": "2026-09-28T10:34:59.577041+00:00"
   },
   "locations": [
     {
@@ -5110,6 +5340,16 @@
       ],
       "status": "partial",
       "title": "Визуальный хаб проектирования и переноса контекста"
+    },
+    {
+      "items": [],
+      "plan_id": "P-DEEP-AUDIT-REMEDIATION-20260928",
+      "source_ids": [
+        "SRC-INDEPENDENT-DEEP-AUDIT-20260928"
+      ],
+      "status": "planned",
+      "summary": "Сначала D1-D4 и совместимость replay; затем import/apply gateway и независимая приёмка; один готовый executor; commit-linked visual; host transfer и эксплуатация. Новые разделы не приоритет.",
+      "title": "Исправление ядра и завершение сквозного сценария по независимому аудиту"
     }
   ],
   "project": {
@@ -7950,6 +8190,183 @@
       "locator": "docs/HUB_ARCHITECTURE_2026-09-28.md",
       "presence_status": "observed",
       "source_id": "SRC-HUB-SHELL-20260928"
+    },
+    {
+      "content_status": "reported",
+      "input": {
+        "acceptance": [
+          "Каждый подтверждённый дефект имеет кодовую ссылку или воспроизведение",
+          "Риски отделены от дефектов и отсутствующего функционала",
+          "Аналоги проверены по первичным источникам"
+        ],
+        "constraints": [
+          {
+            "reason": "Сохранить воспроизводимый baseline и независимость результатов",
+            "rule": "Не изменять рабочую логику в ходе аудита"
+          }
+        ],
+        "deliverables": [
+          "Отчёт независимых экспертов с воспроизведениями",
+          "Матрица интеграций и план исправлений"
+        ],
+        "max_continuations": 2,
+        "purpose": "Проверить реальную работоспособность, ошибки и целесообразность разработки относительно готовых решений",
+        "stop_conditions": [
+          "Недоступные исходники и окружения помечать непроверенными"
+        ],
+        "task_id": "independent-deep-audit-20260928",
+        "title": "Независимый глубокий аудит приложения"
+      },
+      "kind": "terminal_cli",
+      "locator": "terminal-cli:independent-deep-audit-20260928/8ede26490fe8d61ed82d6194b030b1cc3fe6551faad8df638f300ae7eef1ea6a",
+      "presence_status": "observed",
+      "source_id": "SRC-TERMINAL-8ede26490fe8d61ed82d6194b030b1cc3fe6551faad8df638f300ae7eef1ea6a"
+    },
+    {
+      "content_status": "observed",
+      "input": {
+        "accepted": false,
+        "argv": [
+          "/tmp/agent-terminal-audit-venv/bin/python",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "tests",
+          "-q"
+        ],
+        "attribution_status": "reported",
+        "continuation_count": 0,
+        "cwd": "/workspace/scratch/c911ac0d5396/repos/FIX",
+        "ended_at": null,
+        "exit_code": null,
+        "model_id": "unknown",
+        "output_limit_per_stream_bytes": 8192,
+        "process_id": null,
+        "project_id": "project-history-agent",
+        "run_id": "2299bc6aed6f4d5b95b22bbcba904a1d",
+        "runner_pid": 5,
+        "session_id": "unknown",
+        "started_at": "2026-09-28T10:31:06.002990+00:00",
+        "status": "starting",
+        "task_id": "independent-deep-audit-20260928",
+        "timeout_seconds": 180
+      },
+      "kind": "local_process",
+      "locator": "local-run:2299bc6aed6f4d5b95b22bbcba904a1d",
+      "presence_status": "observed",
+      "source_id": "SRC-EV-RUN-2299bc6aed6f4d5b95b22bbcba904a1d-starting"
+    },
+    {
+      "content_status": "observed",
+      "input": {
+        "accepted": false,
+        "argv": [
+          "/tmp/agent-terminal-audit-venv/bin/python",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "tests",
+          "-q"
+        ],
+        "attribution_status": "reported",
+        "continuation_count": 0,
+        "cwd": "/workspace/scratch/c911ac0d5396/repos/FIX",
+        "ended_at": null,
+        "exit_code": null,
+        "model_id": "unknown",
+        "output_limit_per_stream_bytes": 8192,
+        "process_id": 6,
+        "project_id": "project-history-agent",
+        "run_id": "2299bc6aed6f4d5b95b22bbcba904a1d",
+        "runner_pid": 5,
+        "session_id": "unknown",
+        "start_event_id": "EV-RUN-2299bc6aed6f4d5b95b22bbcba904a1d-starting",
+        "started_at": "2026-09-28T10:31:06.002990+00:00",
+        "status": "running",
+        "task_id": "independent-deep-audit-20260928",
+        "timeout_seconds": 180
+      },
+      "kind": "local_process",
+      "locator": "local-run:2299bc6aed6f4d5b95b22bbcba904a1d",
+      "presence_status": "observed",
+      "source_id": "SRC-EV-RUN-2299bc6aed6f4d5b95b22bbcba904a1d-running"
+    },
+    {
+      "content_status": "observed",
+      "input": {
+        "accepted": false,
+        "argv": [
+          "/tmp/agent-terminal-audit-venv/bin/python",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "tests",
+          "-q"
+        ],
+        "attribution_status": "reported",
+        "continuation_count": 0,
+        "cwd": "/workspace/scratch/c911ac0d5396/repos/FIX",
+        "ended_at": "2026-09-28T10:31:18.071082+00:00",
+        "exit_code": 0,
+        "model_id": "unknown",
+        "output_limit_per_stream_bytes": 8192,
+        "process_id": 6,
+        "project_id": "project-history-agent",
+        "run_id": "2299bc6aed6f4d5b95b22bbcba904a1d",
+        "runner_pid": 5,
+        "session_id": "unknown",
+        "start_event_id": "EV-RUN-2299bc6aed6f4d5b95b22bbcba904a1d-starting",
+        "started_at": "2026-09-28T10:31:06.002990+00:00",
+        "status": "succeeded",
+        "stderr": {
+          "bytes_seen": 565,
+          "capture_error": null,
+          "text": "Executing <Task pending name='Task-2' coro=<ProtocolTests.test_real_stdio_client_retrieves_existing_FIX_journal() running at /workspace/scratch/c911ac0d5396/repos/FIX/tests/test_mcp_bridge.py:108> cb=[_run_until_complete_cb() at /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:181] created at /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py:100> took 0.485 seconds\n----------------------------------------------------------------------\nRan 228 tests in 11.643s\n\nOK\n",
+          "truncated": false
+        },
+        "stdout": {
+          "bytes_seen": 369,
+          "capture_error": null,
+          "text": "{\"mcp_transmission_audit\": {\"status\": \"PASS\", \"fixture\": \"synthetic\", \"transport\": \"real stdio subprocess\", \"checks\": [\"ids\", \"full L2 payloads\", \"constraints\", \"sources\", \"supersession\", \"receipt hashes\", \"repeat import\", \"state change\", \"project scope\"], \"omissions\": [\"Original account archives not supplied\", \"Continuous ingestion not tested\", \"A6 remains open\"]}}\n",
+          "truncated": false
+        },
+        "task_id": "independent-deep-audit-20260928",
+        "timeout_seconds": 180
+      },
+      "kind": "local_process",
+      "locator": "local-run:2299bc6aed6f4d5b95b22bbcba904a1d",
+      "presence_status": "observed",
+      "source_id": "SRC-EV-RUN-2299bc6aed6f4d5b95b22bbcba904a1d-succeeded"
+    },
+    {
+      "content_status": "reported",
+      "input": {
+        "acceptance_results": [],
+        "blockers": [],
+        "continuation_count": 0,
+        "evidence_event_ids": [
+          "EV-RUN-2299bc6aed6f4d5b95b22bbcba904a1d-succeeded"
+        ],
+        "model_id": "unknown",
+        "session_id": "unknown",
+        "status": "review",
+        "summary": "Три независимых агента: подтверждены дедупликация с выпадением событий из replay, доменная валидация и разрывы контекста;228 tests PASS не покрывают эти случаи. Отчёт docs/INDEPENDENT_DEEP_AUDIT_2026-09-28.md. A6 открыт.",
+        "task_id": "independent-deep-audit-20260928"
+      },
+      "kind": "terminal_cli",
+      "locator": "terminal-cli:independent-deep-audit-20260928/b1cea0f685377a1aecb69c01291a54edb7948b24b899a854c7bd9bedcb58133c",
+      "presence_status": "observed",
+      "source_id": "SRC-TERMINAL-b1cea0f685377a1aecb69c01291a54edb7948b24b899a854c7bd9bedcb58133c"
+    },
+    {
+      "content_status": "reported",
+      "kind": "local_document",
+      "locator": "docs/INDEPENDENT_DEEP_AUDIT_2026-09-28.md",
+      "presence_status": "observed",
+      "source_id": "SRC-INDEPENDENT-DEEP-AUDIT-20260928"
     }
   ],
   "versions": [

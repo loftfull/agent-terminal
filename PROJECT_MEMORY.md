@@ -11,7 +11,7 @@
 - Project ID: `project-history-agent`
 - Каноническая версия: v0.8.1-candidate.1 + browser observation correction; continuous ingestion and A6 open
 - Текущий чат: chat-current-project-history-agent
-- Следующий проверяемый шаг: Подключить первый реальный агентный backend через адаптер с project_id и проверяемыми результатами. Параллельно завершить явный импорт GitHub-наблюдений; визуальная приёмка и A6 остаются открытыми.
+- Следующий проверяемый шаг: Исправить D1-D4 из INDEPENDENT_DEEP_AUDIT_2026-09-28: dedupe без потери различий и с совместимым replay, доменная валидация writer, замкнутый контекст, supersedes в L1. Затем gateway/приёмка, потом внешний executor. A6 и visual acceptance открыты.
 - Правило продолжения: сначала прочитать этот отчёт и PROJECT_MEMORY.json; не повышать reported/planned до verified без новой проверки.
 
 ## CRITICAL_CONSTRAINTS — обязательные ограничения
@@ -63,6 +63,7 @@
 | Проверка всех планов и покрытия исходной истории | partial | — | — |
 | Наглядные планы, аудиты и динамика истории | partial | — | — |
 | Визуальный хаб проектирования и переноса контекста | partial | Визуальный хаб — каркас компонента | 6 рабочих областей, 14 представлений; Manrope и Lucide assets с лицензиями; Контекст выбранной задачи с guardrails и прямой supersedes-цепью; Исходники проверены; visual premium acceptance не выполнена |
+| Исправление ядра и завершение сквозного сценария по независимому аудиту | planned | — | — |
 
 ## 4. Версии и фактические изменения
 ### v0.8.1-candidate.1 · 2026-09-24T09:07:00.573490+00:00 · observed
@@ -207,6 +208,11 @@
 - 2026-09-28T09:06:13.885667+00:00 · **observed** · Local run running
 - 2026-09-28T09:06:13.999340+00:00 · **observed** · Local run succeeded
 - 2026-09-28T09:06:14.137375+00:00 · **reported** · Новый hub shell и 6 рабочих областей; 228 Python tests и DOM/Node PASS. Независимый source review: 4 findings resolved. Visual premium acceptance remains open.
+- 2026-09-28T10:31:05.792246+00:00 · **reported** · Независимый глубокий аудит приложения
+- 2026-09-28T10:31:06.032758+00:00 · **observed** · Local run starting
+- 2026-09-28T10:31:06.165447+00:00 · **observed** · Local run running
+- 2026-09-28T10:31:18.102424+00:00 · **observed** · Local run succeeded
+- 2026-09-28T10:34:59.423521+00:00 · **reported** · Три независимых агента: подтверждены дедупликация с выпадением событий из replay, доменная валидация и разрывы контекста;228 tests PASS не покрывают эти случаи. Отчёт docs/INDEPENDENT_DEEP_AUDIT_2026-09-28.md. A6 открыт.
 - 2026-09-15 · **verified** · Project History Agent originated in ChatGPT chat агент.
 - 2026-09-15 · **verified** · Current chat explicitly requested continuation from chat агент.
 - 2026-09-16 · **verified** · v0.5 durable history package passed its deterministic and real-project candidate gates; A6 remained NOT_RUN.
@@ -266,6 +272,7 @@
 - unknown date · **reported** · Потеря отменённых решений
 - unknown date · **reported** · Понимание интерфейса новым пользователем
 - unknown date · **observed** · Реальный browser clipboard после ручного копирования точно совпал с полным JSON пакетом. Независимый читатель без контекста восстановил 7 ограничений, 3 конфликта, 2 вопроса и цепочку чатов. Download bytes не проверены; отменённое решение отсутствует в эталоне; A6 открыт.
+- unknown date · **observed** · Независимый аудит baseline d8bdd07: синтетические probes подтвердили replay dedupe collision, malformed reserved event, L1 supersedes omission;14/14 опубликованных task packs без contract/report events. Код не исправлялся. Полная готовность не достигнута.
 - unknown date · **observed** · Installed Portalocker and runtime import confirmed
 - unknown date · **observed** · Message viewing, copy fallback, local favorites and portable JSON added. JS logic tests and4dashboard testsPASS. Actual HTML preview rendered15user messages; favorite addition observed; clipboardAPI blocked, manual selected-copy235chars exact. Private preview excluded from Git.
 - unknown date · **observed** · Progressive context tool and selected-chat quick import implemented;12tests PASS; private real43message sample pagination/import checks PASS. No OpenViking runtime or account subscription installed.
@@ -427,8 +434,14 @@
 - `SRC-EV-RUN-46cec11135d1443382c937566d044ae4-succeeded` — local-run:46cec11135d1443382c937566d044ae4
 - `SRC-TERMINAL-0048928b772276499f749cf7c9c3535c89d2d4e3e90cd4bdab07e4da61828d87` — terminal-cli:hub-shell-20260928/0048928b772276499f749cf7c9c3535c89d2d4e3e90cd4bdab07e4da61828d87
 - `SRC-HUB-SHELL-20260928` — docs/HUB_ARCHITECTURE_2026-09-28.md
+- `SRC-TERMINAL-8ede26490fe8d61ed82d6194b030b1cc3fe6551faad8df638f300ae7eef1ea6a` — terminal-cli:independent-deep-audit-20260928/8ede26490fe8d61ed82d6194b030b1cc3fe6551faad8df638f300ae7eef1ea6a
+- `SRC-EV-RUN-2299bc6aed6f4d5b95b22bbcba904a1d-starting` — local-run:2299bc6aed6f4d5b95b22bbcba904a1d
+- `SRC-EV-RUN-2299bc6aed6f4d5b95b22bbcba904a1d-running` — local-run:2299bc6aed6f4d5b95b22bbcba904a1d
+- `SRC-EV-RUN-2299bc6aed6f4d5b95b22bbcba904a1d-succeeded` — local-run:2299bc6aed6f4d5b95b22bbcba904a1d
+- `SRC-TERMINAL-b1cea0f685377a1aecb69c01291a54edb7948b24b899a854c7bd9bedcb58133c` — terminal-cli:independent-deep-audit-20260928/b1cea0f685377a1aecb69c01291a54edb7948b24b899a854c7bd9bedcb58133c
+- `SRC-INDEPENDENT-DEEP-AUDIT-20260928` — docs/INDEPENDENT_DEEP_AUDIT_2026-09-28.md
 
 ## 11. Передача
 - Текущий чат: chat-current-project-history-agent
-- Следующий шаг: Подключить первый реальный агентный backend через адаптер с project_id и проверяемыми результатами. Параллельно завершить явный импорт GitHub-наблюдений; визуальная приёмка и A6 остаются открытыми.
-- Обновлено: 2026-09-28T09:06:14.280656+00:00
+- Следующий шаг: Исправить D1-D4 из INDEPENDENT_DEEP_AUDIT_2026-09-28: dedupe без потери различий и с совместимым replay, доменная валидация writer, замкнутый контекст, supersedes в L1. Затем gateway/приёмка, потом внешний executor. A6 и visual acceptance открыты.
+- Обновлено: 2026-09-28T10:34:59.577041+00:00
